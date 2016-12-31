@@ -1,0 +1,708 @@
+/*
+ * globals
+ *===========================================*/
+
+body {
+  font-size: 14px;
+  font-family: "Titillium Web", sans-serif;
+}
+
+@font-face {
+  font-family: 'Sternbach-Italic';
+    src:  url('../fonts/Sternbach-Italic.ttf.woff') format('woff'),
+    url('../fonts/Sternbach-Italic.ttf.svg#Sternbach-Italic') format('svg'),
+    url('../fonts/Sternbach-Italic.ttf.eot'),
+    url('../fonts/Sternbach-Italic.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.row {
+  margin: 0 !important;
+}
+
+.button-wrap {
+  padding-top: 30px;
+}
+
+.button-wrap a {
+  text-decoration: none;
+  color: white;
+}
+
+.dark-button {
+  padding: 12px;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 300px;
+  background-color: #333;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/*
+ * nav/menu
+ *===========================================*/
+
+.menu-button {
+  position: absolute;
+  padding: 5px 10px;
+  margin: 15px;
+  text-transform: uppercase;
+  background-color: white;
+  width: 60px;
+  height: 38px;
+  cursor: pointer;
+}
+
+.menu-button-line {
+  width: 34px;
+  height: 5px;
+  background-color: black;
+  margin: 3px;
+}
+
+#menu-overlay {
+  display: none;
+  z-index: 999;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.9);
+}
+
+#menu-overlay a {
+  text-decoration: none;
+  color: white;
+}
+
+nav {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+nav li {
+  font-size: 80px;
+  color: white;
+  text-transform: uppercase;
+  line-height: 150px;
+}
+
+nav li:hover {
+  background-color: #FF5151;
+}
+
+#logged-in-menu {
+  height: 58px;
+  position: absolute;
+  left: 20px;
+  top: 40px;
+  color: white;
+  z-index: 1000;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.logged-in-user {
+  color: #FF5151;
+  font-weight: bold;
+}
+
+#close-menu {
+  width: 58px;
+  height: 58px;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: url("../img/cross.png");
+  z-index: 1000;
+  cursor: pointer;
+}
+
+/*
+ * home page
+ *===========================================*/
+
+#splash {
+  padding: 100px 0;
+  background-image: url("../img/cage-dark.jpg");
+  background-size: cover;
+  background-position: center-top;
+  background-repeat: no-repeat;
+}
+
+#header {
+  font-family: 'Sternbach-Italic';
+  font-size: 200px;
+  text-align: center;
+  color: white;
+}
+
+#news-events {
+  background: #e7e7e7;
+}
+
+#news-events h2 {
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+  font-size: 42px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 5px solid #FF5151;
+}
+
+#news-events a {
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.news-item {
+  padding-bottom: 25px;
+}
+
+.news-title {
+  background-color: white;
+  padding: 10px;
+}
+
+.event-list {
+
+}
+
+.event-item {
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+#news-events .event-item a {
+  font-size: 30px;
+}
+
+.thumbnail-image {
+  min-height: 100px;
+  background-size:cover;
+  background-position: center top;
+}
+
+
+/*
+ * events
+ *===========================================*/
+
+.make-your-selections, .event-ldr {
+  padding-top: 30px;
+}
+
+.make-your-selections a, .event-ldr a {
+  text-decoration: none;
+  color: white;
+}
+
+.selections-button {
+  padding: 12px;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 300px;
+  background-color: #FF5151;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.ldr-button {
+  padding: 12px;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 300px;
+  background-color: #333;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#event-trailer, #ufc-link, #news-events {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.ufc-event {
+  background-image: url("../img/bg.jpg");
+  background-position: center-top;
+  background-repeat: no-repeat;
+  padding-top: 95px;
+  padding-bottom: 95px;
+}
+
+#event-title {
+  font-family: 'Oswald', sans-serif;
+  /*font-family: 'Sternbach-Italic';*/
+  font-size: 95px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+#event-tagline {
+  text-align: center;
+  font-size: 32px;
+  padding-bottom: 40px;
+}
+
+#event-image {
+  text-align: center;
+}
+
+.event-when {
+  padding-bottom: 15px;
+}
+
+#event-date {
+  text-align: center;
+  font-size: 22px;
+}
+
+#event-time {
+  text-align: center;
+  font-size: 16px;
+}
+
+.event-where {
+
+}
+
+#event-arena {
+  text-align: center;
+  font-size: 22px;
+}
+
+#event-location {
+  text-align: center;
+  font-size: 16px;
+}
+
+#event-trailer {
+  text-align: center;
+}
+
+#event-trailer video {
+  width: 75%;
+}
+
+.fighter-title {
+  text-align: center;
+}
+
+.fighter-title-text {
+  padding-top: 15%;
+  display: inline-block;
+  text-align: left;
+  font-family: 'Oswald', sans-serif;
+  font-weight: bold;
+  font-size: 36px;
+  color: white;
+}
+
+.championship-fight {
+  font-family: "Titillium Web", sans-serif;
+  font-weight: bold;
+  color: #FFCA28;
+  font-size: 24px;
+  text-transform: uppercase;
+  padding-bottom: 5px;
+}
+
+.fighter-background {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.fighter-background:nth-child(3n-1) {
+  background-color: #191919;
+}
+
+.fighter-background:nth-child(3n) {
+  background-color: #323232;
+}
+
+.fighter-background:nth-child(3n-2){
+  background-color: #4c4c4c;
+}
+
+.left-column {
+  text-align: right;
+}
+
+.center-column {
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.right-column {
+
+}
+
+.fighter-tale {
+  width: 100%;
+  font-size: 14px;
+  font-family: "Titillium Web", sans-serif;
+  color: white;
+}
+
+.fighter-tale td {
+  padding: 6px 0;
+}
+
+.fighter-tale tr:nth-child(even) {
+  background-color: #666;
+}
+
+.fighter-names {
+  width: 100%;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.nickname {
+  font-size: 14px;
+}
+
+sup {
+  color: #FF5151;
+}
+
+.champ {
+  color: #FFCA28;
+}
+
+#ufc-link {
+  font-size: 30px;
+  text-align: center;
+}
+
+/*
+ * betting page
+ *===========================================*/
+
+#ufc-bets {
+  padding-top: 40px;
+  padding-bottom: 90px;
+}
+
+#ufc-bets-success {
+  padding-top: 70px;
+  padding-bottom: 20px;
+  opacity: 1;
+}
+
+.bets-success-message {
+  background: #eeeeee;
+  border-top: 10px solid #56ba79;
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  padding: 35px 0;
+}
+
+#close-bet-success {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  background: url("../img/cross-18.png");
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.bet-fights {
+  text-align: center;
+}
+
+.bet-fights table {
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.bet-fighter:hover {
+  background-color: #e3e3e3;
+}
+
+.bet-fighter-selected {
+  background-color: #333;
+  color: white;
+  font-weight: bold;
+}
+
+.bet-fights table td {
+  text-align: center;
+  font-size: 20px;
+  /*padding: 10px 0;*/
+  cursor: pointer;
+}
+
+.bet-img {
+
+}
+
+.bet-fight-title {
+  padding: 10px 0;
+}
+
+.bet-fighter-td {
+  padding: 10px 0;
+}
+
+.bet-fights-submit {
+  text-align: center;
+  padding-top: 25px;
+}
+
+.bet-fighter {
+  /*border-bottom: 1px solid #d6d6d6;*/
+}
+
+.bet-locked, .bet-login-text {
+  text-align: center;
+  font-size: 28px;
+  padding: 125px 0;
+}
+
+td.bet-fight-title {
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 16px !important;
+  letter-spacing: 6px;
+  border-top: 5px solid #FF5151;
+  background: #eeeeee;
+}
+
+input[type='submit'] {
+  border: none;
+  padding: 12px 35px;
+  margin: 0 auto;
+  text-align: center;
+  max-width: 300px;
+  background-color: #FF5151;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/*
+ * event leaderboard page
+ *===========================================*/
+
+#ufc-event-leaderboard, #ufc-event-ldr-fights {
+  padding: 90px 0;
+}
+
+#ufc-event-ldr-fights {
+  background-color: #eeeeee;
+}
+
+#ufc-event-leaderboard h2, #ufc-event-ldr-fights h2 {
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+  font-size: 42px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 5px solid #FF5151;
+}
+
+table.table-event-leaderboard {
+  width: 100%;
+}
+
+table.table-event-leaderboard th {
+  text-transform: uppercase;
+  color: white;
+  font-size: 20px;
+  background-color: #444;
+  padding: 12px 0 10px 12px;
+}
+
+table.table-event-leaderboard td {
+  padding: 10px 0 10px 10px;
+  font-size: 18px;
+  border-bottom: 1px solid #eee;
+}
+
+.event-ldr-wrap {
+  padding-bottom: 20px;
+}
+
+.ldr-img-row {
+  background-color: white;
+}
+
+.event-ldr-row {
+  border-bottom: 3px solid #FF5151;
+  margin-bottom: 15px;
+  background-color: #444;
+  color: white;
+}
+
+.event-ldr-fighter{
+  font-size: 18px;
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.event-ldr-vs {
+  text-align: center;
+  font-size: 16px;
+}
+
+.event-ldr-users {
+  background-color: #bebebe;
+  text-align: center;
+  padding: 10px 0;
+}
+
+.ldr-bets {
+  background-color: #bebebe;
+}
+
+.event-ldr-winner {
+  background-color: #88cea1;
+  font-weight: bold;
+}
+
+.event-ldr-loser {
+  background-color: #FF5151;
+  color: white;
+}
+
+
+/*
+ * overall leaderboard page
+ *===========================================*/
+
+#ufc-leaderboard {
+  padding: 90px 0;
+}
+
+#ufc-leaderboard h2 {
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+  font-size: 42px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 5px solid #FF5151;
+}
+
+table.table-leaderboard {
+  width: 100%;
+}
+
+table.table-leaderboard th {
+  text-transform: uppercase;
+  color: white;
+  font-size: 20px;
+  background-color: #444;
+  padding: 12px 0 10px 12px;
+}
+
+table.table-leaderboard td {
+  padding: 10px 0 10px 10px;
+  font-size: 18px;
+  border-bottom: 1px solid #eee;
+}
+
+
+
+/*
+ * footer
+ *===========================================*/
+
+footer {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #333;
+  color: white;
+  min-height: 125px;
+}
+
+
+/*
+ * media queries
+ *===========================================*/
+
+@media only screen and (max-width : 768px) {
+  #header {
+    font-size: 150px;
+  }
+
+  #event-title {
+    font-size: 55px;
+  }
+
+  #event-tagline {
+    font-size: 24px;
+  }
+
+  nav li {
+    font-size: 48px;
+  }
+
+  .fight-title-text {
+    text-align: center;
+    padding-top: 0;
+    padding-bottom: 40px;
+  }
+
+  #ufc-bets {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .bet-fights table td {
+    font-size: 14px;
+  }
+
+  table.table-event-leaderboard td, table.table-event-leaderboard th {
+    font-size: 12px;
+    padding-left: 5px 0 5px 5px;
+  }
+
+  .ldr-img-row {
+    /*display: none;*/
+  }
+
+  .event-ldr-fighter {
+    font-size: 12px;
+  }
+
+  .event-ldr-users {
+    font-size: 10px;
+  }
+
+  footer {
+    text-align: center;
+  }
+
+  footer .text-right {
+    text-align: center;
+  }
+}

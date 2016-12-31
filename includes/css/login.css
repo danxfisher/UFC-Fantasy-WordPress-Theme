@@ -1,0 +1,55 @@
+@font-face {
+  font-family: 'Sternbach-Italic';
+    src:  url('../fonts/Sternbach-Italic.ttf.woff') format('woff'),
+    url('../fonts/Sternbach-Italic.ttf.svg#Sternbach-Italic') format('svg'),
+    url('../fonts/Sternbach-Italic.ttf.eot'),
+    url('../fonts/Sternbach-Italic.eot?#iefix') format('embedded-opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.google-captcha {
+  width: auto;
+  padding-bottom: 15px;
+}
+
+.login-title, .register-title {
+  font-family: 'Sternbach-Italic';
+  font-size: 95px;
+  text-align: center;
+  padding-bottom: 15px;
+  color: white;
+}
+
+.login-title, .register-title {
+  padding-bottom: 30px;
+}
+body {
+  background: #333;
+}
+body.login {}
+body.login div#login {min-width: 350px;}
+body.login div#login h1 {display: none;}
+body.login div#login h1 a {background-image: none;}
+body.login div#login form#loginform {}
+body.login div#login form#loginform p {}
+body.login div#login form#loginform p label {}
+body.login div#login form#loginform input {}
+body.login div#login form#loginform input#user_login {}
+body.login div#login form#loginform input#user_pass {}
+body.login div#login form#loginform p.forgetmenot {}
+body.login div#login form#loginform p.forgetmenot input#rememberme {}
+body.login div#login form#loginform p.submit {}
+body.login div#login form#loginform p.submit input#wp-submit {}
+#wp-submit {
+  background-color: #FF5151;
+  border-color: #FF5151;
+  background: #FF5151;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  text-shadow: none;
+}
+body.login div#login p#nav {color: white;}
+body.login div#login p#nav a {color: white;}
+body.login div#login p#backtoblog {}
+body.login div#login p#backtoblog a {color: white;}
