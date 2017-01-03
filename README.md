@@ -6,3 +6,12 @@
 * Refactor code
 * Improve page speed and performance
 * Lots of other stuff
+
+## Installation
+
+1) Install WordPress
+2) Download zip of repo and install as a WordPress theme (upload it within WordPress)
+
+## Documentation
+
+* Coming soon
