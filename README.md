@@ -1,4 +1,4 @@
-# UFC Fantasy Theme
+# UFC Fantasy WordPress Theme
 
 ## To do
 
