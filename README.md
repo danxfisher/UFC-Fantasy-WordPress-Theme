@@ -1,5 +1,12 @@
 # UFC Fantasy WordPress Theme
 
+## Next top milestones
+
+* Store fighter/fight/event JSON in it's own databases (or the necessary key/value pairs) to limit API calls.
+  * Need to check for when events/fights/fighters change
+* Only constant API call should be for news on main page.  Everything else should call from a database.
+* Admin panel - Add event only for the current days event or future instead of all pas, present, and future fights
+
 ## To do
 
 * If fight is pulled, remove it from picks page, picks db, bets db, etc
