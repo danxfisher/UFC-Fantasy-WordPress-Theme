@@ -16,7 +16,7 @@ function ufcBet_events() {
   $add_event_error_message = '';
   $add_event_success = false;
   $add_event_success_message = '';
-  
+
   // handle add-event form submission
   if ( isset( $_POST['submit'] ) && ($_GET['action'] == 'add-event') && ($_REQUEST['submit'] == "Add Event") ){
     $events = file_get_contents('http://ufc-data-api.ufc.com/api/v3/events');
@@ -251,11 +251,13 @@ function ufcBet_add_event() {
             <span style="font-weight: bold">Event:</span> <br />
             <select id="dd_ufc-event" name="dd_ufc-event" required>
               <?php
+            
               foreach($events_asc as $obj){
-                //if (date(DATE_ATOM) <= $obj->event_date) {
+
+                if (date(DATE_ATOM) <= $obj->event_date) {
                   $the_date = date('F j, Y', strtotime($obj->event_date));
                   echo "<option value='" . $obj->id . "'>" . $obj->base_title . ' - ' . $the_date . '</option>';
-                //}
+                }
               }
               ?>
             </select>
