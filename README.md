@@ -20,7 +20,11 @@
 ## Installation
 
 1. Install WordPress
-2. Download zip of repo and install as a WordPress theme (upload it within WordPress)
+2. Settings > Permalinks > Post name
+3. Pages > Add Page > Title = Leaderboard > Template = Leaderboard Page
+4. Pages > Add Page > Title = Event Leaderboard > Template = Event Leaderboard Page
+5. Pages > Add Page > Title = Betting > Template = Betting Page
+6. Download zip of repo and install as a WordPress theme (upload it within WordPress)
 
 ## Documentation
 
