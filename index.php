@@ -28,18 +28,8 @@ get_header(); ?>
 
 					// most recent 5 news articles
 					$articles = array_slice($news, 0, 6);
-					/*
-					foreach ($articles as $article) {
-						echo '<div class="row news-item">';
-						echo '<div class="col-sm-4 thumbnail-image" style="background-image:url(' . $article->thumbnail . ');">';
-						echo '</div>';
-						echo '<div class="col-sm-8">';
-						echo '<a href="http://ufc.com/news/' . $article->url_name . '">' . $article->title . '</a>';
-						echo '</div>';
-						echo '</div>';
-					}
-					*/
-					?>
+
+				?>
 					<div class="row">
 
 					<?php
