@@ -2,10 +2,13 @@
 
 ## Next top milestones
 
+* Auto generate post on "Add Event"
+* Include ACF in theme
 * Store fighter/fight/event JSON in it's own databases (or the necessary key/value pairs) to limit API calls.
   * Need to check for when events/fights/fighters change
+  * This may not be possible if there is no date modified object
 * Only constant API call should be for news on main page.  Everything else should call from a database.
-* Admin panel - Add event only for the current days event or future instead of all pas, present, and future fights
+* ~~Admin panel - Add event only for the current days event or future instead of all pas, present, and future fights~~
 
 ## To do
 
