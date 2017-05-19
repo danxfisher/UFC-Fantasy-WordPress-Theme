@@ -14,8 +14,9 @@
 ## To do
 
 * If fight is pulled, remove it from picks page, picks db, bets db, etc
-* Break events page out to custom post type
+* Break events page out to custom post type ?
 * Refactor code
+  * Break out API calls and Table calls to different classes
 * Improve page speed and performance
 * Lots of other stuff
 
