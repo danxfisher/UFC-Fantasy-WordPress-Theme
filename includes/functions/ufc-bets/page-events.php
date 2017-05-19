@@ -31,11 +31,23 @@ function ufcBet_events() {
     $locktime = $_POST['dp_locktime'];
     $event_name = '';
     $event_time = '';
+    $value_event_title = '';
+
     foreach($events_asc as $obj){
       if ($obj->id == $event_id) {
         $event_time = $obj->event_date;
         $the_date = date('F j, Y', strtotime($event_time));
         $event_name = $obj->base_title . ' - ' . $the_date;
+
+        // set values to store in ACF custom fields
+        $value_event_title = $obj->base_title;
+        $value_feature_image = $obj->feature_image;
+        $value_event_url = $obj->url_name;
+        $value_event_tagline = $obj->title_tag_line;
+        $value_event_arena = $obj->arena;
+        $value_event_location = $obj->location;
+        $value_event_trailer = $obj->trailer_url;
+        $value_event_time_text = $obj->event_time_text;
       }
     }
 
@@ -88,6 +100,54 @@ function ufcBet_events() {
       // GO TO SCREEN TO ENABLE FIGHTS AFTER CREATING EVENT
       // end fights table stuff ===========================
       // ************************************************************
+
+      // ***********************************************************************
+      // ***********************************************************************
+      // auto generate post from ufc event id
+      // ***********************************************************************
+      // ***********************************************************************
+      $now = new DateTime();
+      $date = $now->format('Y-m-d H:i:s');
+
+      $new_event = array (
+          'post_title'  =>  $event_id,
+          'post_name'   =>  $event_id,
+          'post_date'   =>  $date,
+          'post_status' =>  'publish',
+        //'post_type'   =>  'ufc_event'  ,
+      );
+
+      $post_id = wp_insert_post($new_event);
+
+      $dt = new DateTime($event_time);
+      $ufc_event_date = $dt->format('Y-m-d');
+
+      // ACF keys for custom fields to store event data
+      $key_event_start_date = 'field_58d22e612f794';
+      $key_event_title = 'field_58d22ef658473';
+      $key_feature_image = 'field_58d34ac2e7226';
+      $key_event_url = 'field_58d34ad4e7227';
+      $key_event_tagline = 'field_58d34b08e7228';
+      $key_event_arena = 'field_58d34b13e7229';
+      $key_event_location = 'field_58d34b1ee722a';
+      $key_event_trailer = 'field_58d34b37e722b';
+      $key_event_time_text = 'field_58d34c42e722c';
+
+      // update ACF fields in post
+			update_field( $key_event_start_date, $ufc_event_date, $post_id );
+      update_field( $key_event_title, $value_event_title, $post_id );
+      update_field( $key_feature_image, $value_feature_image, $post_id );
+      update_field( $key_event_url, $value_event_url, $post_id );
+      update_field( $key_event_tagline, $value_event_tagline, $post_id );
+      update_field( $key_event_arena, $value_event_arena, $post_id );
+      update_field( $key_event_location, $value_event_location, $post_id );
+      update_field( $key_event_trailer, $value_event_trailer, $post_id );
+      update_field( $key_event_time_text, $value_event_time_text, $post_id );
+
+      // *** if done this way, how can we update the info once ufc updates it? ***
+
+
+      // end auto generated post ***********************************************
 
       $add_event_success = true;
       $add_event_success_message = 'The event has been added.';
@@ -174,8 +234,6 @@ function ufcBet_events() {
       $event_id = $_GET['event_id'];
       $fights_table = $wpdb->prefix . 'ufcBet_fights';
 
-
-
       $fights = $wpdb->get_results($wpdb->prepare("SELECT * FROM $fights_table WHERE event_id = %s", $event_id));
 
       foreach ($fights as $fight){
@@ -251,7 +309,7 @@ function ufcBet_add_event() {
             <span style="font-weight: bold">Event:</span> <br />
             <select id="dd_ufc-event" name="dd_ufc-event" required>
               <?php
-            
+
               foreach($events_asc as $obj){
 
                 if (date(DATE_ATOM) <= $obj->event_date) {

@@ -18,14 +18,16 @@ get_header(); ?>
 
 	$event_id = 0;
 
-	$start_event = get_field("event_start_date");
+	//$post_start_event = get_field("event_start_date", get_the_id());
+	$post_start_event = get_field("event_start_date");
+	$post_event_name = get_field("event_title");
 
 	foreach($events as $obj){
 		$event_date_time = $obj->event_date;
 		$format_date = new DateTime($event_date_time);
 		$simple_event_date = $format_date->format('Y-m-d');
 
-		if (($obj->base_title == get_the_title()) && ($simple_event_date == $start_event)) {
+		if (($obj->base_title == $post_event_name) && ($simple_event_date == $post_start_event)) {
 			$feature_image = $obj->feature_image;
 			$event_date = date('F j, Y', strtotime($obj->event_date));
 			$fight_url = $obj->url_name;
@@ -74,7 +76,7 @@ get_header(); ?>
 
 				</div>
 				<div class="col-md-3 make-your-selections">
-					<a href="<?php echo esc_url( add_query_arg( array('ufc_event_id' => $event_id, 'title' => get_the_title(),), site_url( '/betting/' ) ) )?>">
+					<a href="<?php echo esc_url( add_query_arg( array('ufc_event_id' => $event_id, 'title' => $post_event_name,), site_url( '/betting/' ) ) )?>">
 					<!-- <a href="betting?ufc_event_id=<?php echo $event_id ?>&amp;title=<?php echo get_the_title(); ?>"> -->
 						<div class="selections-button">
 							Make your selections
@@ -82,7 +84,7 @@ get_header(); ?>
 					</a>
 				</div>
 				<div class="col-md-3 event-ldr">
-					<a href="event-leaderboard?ufc_event_id=<?php echo $event_id ?>&amp;title=<?php echo get_the_title(); ?>">
+					<a href="event-leaderboard?ufc_event_id=<?php echo $event_id ?>&amp;title=<?php echo $post_event_name; ?>">
 						<div class="ldr-button">
 							View the event leaderboard
 						</div>
