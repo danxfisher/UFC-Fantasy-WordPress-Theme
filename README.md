@@ -7,12 +7,14 @@
 * Store fighter/fight/event JSON in it's own databases (or the necessary key/value pairs) to limit API calls.
   * Need to check for when events/fights/fighters change
   * This may not be possible if there is no date modified object
-* Only constant API call should be for news on main page.  Everything else should call from a database.
+* Only constant API call should be for news on main page.  Everything else should call from a database. Mmm ... probably not, actually
+* Placeholder images/text while loading data from the API...
 * ~~Admin panel - Add event only for the current days event or future instead of all pas, present, and future fights~~
 
 ## To do
 
 * If fight is pulled, remove it from picks page, picks db, bets db, etc
+* Break events page out to custom post type
 * Refactor code
 * Improve page speed and performance
 * Lots of other stuff
