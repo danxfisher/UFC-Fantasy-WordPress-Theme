@@ -2,6 +2,9 @@
 /*
  * Template Name: Event Leaderboard Page
  */
+
+include('includes/php/ufc-api.php');
+
 get_header();
 
 global $wpdb;
@@ -20,9 +23,11 @@ $fights = $wpdb->get_results($wpdb->prepare("SELECT * FROM $fights_table WHERE u
 $bets_table = $wpdb->prefix . 'ufcBet_bets';
 $bets = $wpdb->get_results($wpdb->prepare("SELECT * FROM $bets_table WHERE ufc_event_id = %s", $ufc_event_id));
 
-$ufc_event_url = 'http://ufc-data-api.ufc.com/api/v3/events/' . $ufc_event_id . '/fights';
-$ufc_event = file_get_contents($ufc_event_url);
-$ufc_event = json_decode($ufc_event);
+// $ufc_event_url = 'http://ufc-data-api.ufc.com/api/v3/events/' . $ufc_event_id . '/fights';
+// $ufc_event = file_get_contents($ufc_event_url);
+// $ufc_event = json_decode($ufc_event);
+
+$ufc_event = UfcAPI::getFightsForEvent($ufc_event_id);
 
 
 // *****************************************************************************
