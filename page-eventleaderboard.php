@@ -232,30 +232,28 @@ foreach ($leader_bets as $bet) {
         </div>
       </div>
       <div class="row">
-        <div class="col-md-3">
-
-        </div>
-        <div class="col-md-6">
+        <div class="col-md-12">
 
           <?php foreach ($fights as $fight) { ?>
+            <?php $bets = $wpdb->get_results($wpdb->prepare("SELECT * FROM $bets_table WHERE ufc_event_id = %s AND ufc_fight_id = %s", $ufc_event_id, $fight->ufc_fight_id)); ?>
             <div class="event-ldr-wrap">
               <div class="row ldr-img-row">
-                <div class="col-xs-5">
+                <div class="col-xs-5 <?php if($fight->fighter1 === $fight->winner) { ?> event-ldr-winner<?php } ?>">
                   <?php foreach ($ufc_event as $event_fight) {
                     if ($fight->ufc_fight_id == $event_fight->id) {
                   ?>
-                      <img src="<?php echo $event_fight->fighter1_profile_image; ?>" class="img-responsive" />
+                      <img src="<?php echo $event_fight->fighter1_profile_image; ?>" class="img-responsive center-stuff" />
                     <?php }
                   } ?>
                 </div>
                 <div class="col-xs-2">
 
                 </div>
-                <div class="col-xs-5">
+                <div class="col-xs-5 <?php if($fight->fighter2 === $fight->winner) { ?> event-ldr-winner<?php } ?>">
                   <?php foreach ($ufc_event as $event_fight) {
                     if ($fight->ufc_fight_id == $event_fight->id) {
                   ?>
-                      <img src="<?php echo $event_fight->fighter2_profile_image; ?>" class="img-responsive" />
+                      <img src="<?php echo $event_fight->fighter2_profile_image; ?>" class="img-responsive center-stuff" />
                     <?php }
                   } ?>
                 </div>
@@ -271,7 +269,7 @@ foreach ($leader_bets as $bet) {
                   <?php echo $fight->fighter2 ?>
                 </div>
               </div>
-              <?php $bets = $wpdb->get_results($wpdb->prepare("SELECT * FROM $bets_table WHERE ufc_event_id = %s AND ufc_fight_id = %s", $ufc_event_id, $fight->ufc_fight_id)); ?>
+
               <div class="row ldr-bets">
                 <div class="col-xs-5 event-ldr-users<?php if($fight->fighter1 === $fight->winner) { ?> event-ldr-winner<?php } ?>">
                   <!-- usea -->
@@ -296,9 +294,6 @@ foreach ($leader_bets as $bet) {
               </div>
             </div>
           <?php } ?>
-        </div>
-        <div class="col-md-3">
-
         </div>
       </div>
     </div>
