@@ -19,6 +19,7 @@
   * Break out API calls and Table calls to different classes
 * Improve page speed and performance
 * Lots of other stuff
+* Prevent unwanted access to /wp-includes
 
 ## Installation
 
