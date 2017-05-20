@@ -20,6 +20,7 @@
 * Improve page speed and performance
 * Lots of other stuff
 * Prevent unwanted access to /wp-includes
+* eggtactular: HTML injection here - http://www.danfisher.io/ufc/event-leaderboard/?title=test21%22%3E%3Cu%3E (couldn't escalate to XSS due to WAF  :( )
 
 ## Installation
 
