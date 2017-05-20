@@ -3,7 +3,11 @@
  * main page
  */
 
-get_header(); ?>
+	include('includes/php/ufc-api.php');
+
+	get_header();
+	
+?>
 
 <section id="splash">
 	<div class="container">
@@ -23,8 +27,10 @@ get_header(); ?>
 			<div class="col-md-6">
 				<h2>News</h2>
 				<?php
-					$news = file_get_contents('http://ufc-data-api.ufc.com/api/v3/news');
-					$news = json_decode($news);
+					// $news = file_get_contents('http://ufc-data-api.ufc.com/api/v3/news');
+					// $news = json_decode($news);
+
+					$news = UfcAPI::getNewsArticles();
 
 					// most recent 5 news articles
 					$articles = array_slice($news, 0, 6);

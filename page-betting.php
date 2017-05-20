@@ -3,6 +3,8 @@
  * Template Name: Betting Page
  */
 
+ include('includes/php/ufc-api.php');
+
 get_header(); ?>
 
 <?php
@@ -53,9 +55,11 @@ if ($ufc_event_id && $event_title) {
   else {
     $url = str_replace(" ", "-", $event_title);
 
-    $ufc_event_url = 'http://ufc-data-api.ufc.com/api/v3/events/' . $ufc_event_id . '/fights';
-    $ufc_event = file_get_contents($ufc_event_url);
-    $ufc_event = json_decode($ufc_event);
+    // $ufc_event_url = 'http://ufc-data-api.ufc.com/api/v3/events/' . $ufc_event_id . '/fights';
+    // $ufc_event = file_get_contents($ufc_event_url);
+    // $ufc_event = json_decode($ufc_event);
+
+    $ufc_event = UfcAPI::getFightsForEvent($ufc_event_id);
 
 
     // also use this if the user has previously submitted bets for this event

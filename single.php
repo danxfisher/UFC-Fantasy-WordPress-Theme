@@ -3,15 +3,21 @@
  * single post page
  */
 
-get_header(); ?>
+	include('includes/php/ufc-api.php');
+
+	get_header();
+
+?>
 
 <?php while ( have_posts() ) : the_post(); ?>
 	<?php //the_title(); ?>
 	<?php the_content(); ?>
 	<?php
 	// get list of events
-	$events = file_get_contents('http://ufc-data-api.ufc.com/api/v3/events');
-	$events = json_decode($events);
+	// $events = file_get_contents('http://ufc-data-api.ufc.com/api/v3/events');
+	// $events = json_decode($events);
+
+	$events = UfcAPI::getAllEvents();
 
 	$feature_image = '';
 	$fight_url = '';
@@ -114,9 +120,10 @@ get_header(); ?>
 	}
 
 			// get fights for event
-			$ufc_event_url = 'http://ufc-data-api.ufc.com/api/v3/events/' . $event_id . '/fights';
-			$ufc_event = file_get_contents($ufc_event_url);
-			$ufc_event = json_decode($ufc_event);
+			// $ufc_event_url = 'http://ufc-data-api.ufc.com/api/v3/events/' . $event_id . '/fights';
+			// $ufc_event = file_get_contents($ufc_event_url);
+			// $ufc_event = json_decode($ufc_event);
+			$ufc_event = UfcAPI::getEventByID($event_id);
 
 			// get fights
 			// ***************************************************

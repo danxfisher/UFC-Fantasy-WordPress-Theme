@@ -39,7 +39,7 @@ class UfcAPI
 
   // get fights for UFC event
   public function getFightsForEvent($event_id) {
-    $url = 'http://ufc-data-api.ufc.com/api/v3/events/' . $ufc_event_id . '/fights';
+    $url = 'http://ufc-data-api.ufc.com/api/v3/events/' . $event_id . '/fights';
     $content = file_get_contents($url);
     $content = json_decode($content);
 
