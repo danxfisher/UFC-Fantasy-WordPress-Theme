@@ -10,6 +10,8 @@
 - [ ] Only constant API call should be for news on main page.  Everything else should call from a database. Mmm ... probably not, actually
 - [ ] Placeholder images/text while loading data from the API...
 - [x] ~~Admin panel - Add event only for the current days event or future instead of all pas, present, and future fights~~
+- [ ] Break out all bet table calls to own class
+- [ ] Complete front page
 
 ## To do
 
