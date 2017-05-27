@@ -6,7 +6,7 @@
 	include('includes/php/ufc-api.php');
 
 	get_header();
-	
+
 ?>
 
 <section id="splash">
@@ -39,24 +39,24 @@
 					<div class="row">
 
 					<?php
-					$article_count = 0;
-					foreach ($articles as $article) {
-						$article_count++;
-						if ($article_count % 2 == 1) {
-							echo '<div class="row">';
-						}
-						echo '<div class="col-md-6 news-item">';
-						echo '<div class="col-sm-12 thumbnail-image" style="background-image:url(' . $article->thumbnail . ');">';
-						echo '</div>';
-						echo '<div class="col-sm-12 news-title">';
-						echo '<a href="http://ufc.com/news/' . $article->url_name . '">' . $article->title . '</a>';
-						echo '</div>';
-						echo '</div>';
-						if ($article_count % 2 == 0) {
-							echo '</div>';
-						}
-					}
-				?>
+						$article_count = 0;
+
+						foreach ($articles as $article) {
+							$article_count++;
+							if ($article_count % 2 == 1) {
+					?>
+							<div class="row">
+					<?php	} ?>
+								<div class="col-md-6 news-item">
+									<div class="col-sm-12 thumbnail-image" style="background-image:url('<?php echo $article->thumbnail ?>');">
+									</div>
+									<div class="col-sm-12 news-title">
+										<a href="http://ufc.com/news/<?php echo $article->url_name ?>"><?php echo $article->title ?></a>
+									</div>
+								</div>
+					<?php if ($article_count % 2 == 0) { ?>
+							</div>
+					<?php } }	?>
 					</div>
 			</div>
 			<div class="col-md-6">
@@ -64,18 +64,17 @@
 				<div class="row event-list">
 
 				<?php if ( have_posts() ) : ?>
-					<?php while ( have_posts() ) : the_post();
+					<?php while ( have_posts() ) : the_post(); ?>
 
-							echo '<div class="col-md-12 event-item">';
-							echo '<a href="' . get_the_permalink();
-							echo '">';
-							echo get_the_title();
-							echo '</a>';
-							echo '</div>';
-					?>
+							<div class="col-md-12 event-item">
+								<a href="<?php echo get_the_permalink(); ?>">
+									<span class="fp-event-title"><?php the_field('event_title'); ?></span> - <?php echo date('F j, Y', strtotime(get_field('event_start_date'))); ?>
+								</a>
+							</div>
 
 					<?php endwhile; ?>
 				<?php endif; ?>
+
 				</div>
 			</div>
 		</div>

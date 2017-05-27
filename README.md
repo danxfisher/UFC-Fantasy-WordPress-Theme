@@ -11,7 +11,7 @@
 - [ ] Placeholder images/text while loading data from the API...
 - [x] ~~Admin panel - Add event only for the current days event or future instead of all pas, present, and future fights~~
 - [ ] Break out all bet table calls to own class
-- [ ] Complete front page
+- [x] Complete front page
 
 ## To do
 
