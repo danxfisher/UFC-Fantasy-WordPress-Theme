@@ -168,9 +168,7 @@ nav li:hover {
 }
 
 #news-events a {
-  color: #333;
   font-size: 18px;
-  font-weight: bold;
   text-decoration: none;
 }
 
@@ -191,6 +189,22 @@ nav li:hover {
   background-color: white;
   padding: 10px;
   margin-bottom: 10px;
+}
+
+.news-title a, .event-item a {
+  color: #333;
+}
+
+.event-item:hover {
+  background-color: #FF5151;
+}
+
+.event-item:hover a {
+  color: white;
+}
+
+.event-item .fp-event-title {
+  font-weight: bold;
 }
 
 #news-events .event-item a {
