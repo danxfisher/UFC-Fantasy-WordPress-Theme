@@ -1,10 +1,15 @@
 # UFC Fantasy WordPress Theme
 
-## Next top milestones
+## Next milestones
 
+- [ ] Update and refactor ufc-bets/page-events.php
 - [ ] Auto generate post on "Add Event"
-- [ ] Include ACF in theme
 - [ ] If fight is pulled (aka no longer exists via API call), remove it from picks page, picks db, bets db, etc
+ - [ ] Backend update fights button?
+
+## Top milestones
+
+- [ ] Include ACF in theme
 - [ ] Placeholder images/text while loading data from the API... (or loading spinner of some sort)
 - [ ] Break out all bet table calls to own class
 - [x] Admin panel - Add event only for the current days event or future instead of all pas, present, and future fights
