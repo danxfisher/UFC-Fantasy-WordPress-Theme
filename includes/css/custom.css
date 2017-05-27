@@ -41,6 +41,10 @@ body {
   text-transform: uppercase;
 }
 
+.center-stuff {
+  margin: 0 auto;
+}
+
 /*
  * nav/menu
  *===========================================*/
