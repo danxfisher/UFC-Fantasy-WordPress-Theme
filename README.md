@@ -4,6 +4,7 @@
 
 - [ ] Update and refactor ufc-bets/page-events.php
 - [ ] Auto generate post on "Add Event"
+- [ ] Fix date/time field on "Add Event"
 - [ ] If fight is pulled (aka no longer exists via API call), remove it from picks page, picks db, bets db, etc
   - [ ] Backend update fights button?
 - [ ] eggtactular: HTML injection here - http://www.danfisher.io/ufc/event-leaderboard/?title=test21%22%3E%3Cu%3E (couldn't escalate to XSS due to WAF  :( )

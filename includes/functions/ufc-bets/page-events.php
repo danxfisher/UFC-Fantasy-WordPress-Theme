@@ -5,7 +5,7 @@
  * 4) add events pages
  */
 
-// events page ===============================
+// manage events page ==========================================================
 function ufcBet_events() {
   // declaration of message variables
   $add_fights_success = false;
@@ -17,7 +17,7 @@ function ufcBet_events() {
   $add_event_success = false;
   $add_event_success_message = '';
 
-  // handle add-event form submission
+  // add event (events page) ===================================================
   if ( isset( $_POST['submit'] ) && ($_GET['action'] == 'add-event') && ($_REQUEST['submit'] == "Add Event") ){
     $events = file_get_contents('http://ufc-data-api.ufc.com/api/v3/events');
     $events = json_decode($events);
@@ -33,6 +33,7 @@ function ufcBet_events() {
     $event_time = '';
     $value_event_title = '';
 
+    // iterate our events API json object
     foreach($events_asc as $obj){
       if ($obj->id == $event_id) {
         $event_time = $obj->event_date;
@@ -95,11 +96,6 @@ function ufcBet_events() {
       // end fights table stuff ===========================
       // ************************************************************
 
-      // ***********************************************************************
-      // ***********************************************************************
-      // auto generate post from ufc event id
-      // ***********************************************************************
-      // ***********************************************************************
       $now = new DateTime();
       $date = $now->format('Y-m-d H:i:s');
 
@@ -111,6 +107,7 @@ function ufcBet_events() {
         //'post_type'   =>  'ufc_event'  ,
       );
 
+      // create new post for event
       $post_id = wp_insert_post($new_event);
 
       $dt = new DateTime($event_time);
@@ -121,13 +118,12 @@ function ufcBet_events() {
       $key_event_title = 'field_58d22ef658473';
       $key_event_url = 'field_58d34ad4e7227';
 
-      // update ACF fields in post
+      // update ACF fields with UFC API data in post
 			update_field( $key_event_start_date, $ufc_event_date, $post_id );
       update_field( $key_event_title, $value_event_title, $post_id );
       update_field( $key_event_url, $value_event_url, $post_id );
 
       // *** if done this way, how can we update the info once ufc updates it? ***
-
 
       // end auto generated post ***********************************************
 
@@ -139,8 +135,7 @@ function ufcBet_events() {
       $add_event_error_message = 'Error: The event was not added because already exists.';
     }
   }
-  // handle edit
-  // fights page ===============================
+  // edit event (fights page) ==================================================
   if (isset($_GET['action']) && $_GET['action'] == 'edit') {
     global $wpdb;
     $fights_table = $wpdb->prefix . 'ufcBet_fights';
@@ -186,7 +181,7 @@ function ufcBet_events() {
 
 <?php  }
   else {
-    // handle deletion
+    // deletion (events page) ==================================================
     if (isset($_GET['action']) && $_GET['action'] == 'delete') {
       global $wpdb;
       $fights_table = $wpdb->prefix . 'ufcBet_fights';
@@ -194,23 +189,19 @@ function ufcBet_events() {
       $bets_table = $wpdb->prefix . 'ufcBet_bets';
       $event_id = $_GET['id'];
 
-      // ***********************************************************
-      // ***** ALSO DELETED ALL FROM BETS WHERE ID = event     *****
-      // ***********************************************************
+      // on deletion of event, delete from events, bets, and fights table
       $ufc_event_id = $wpdb->get_var( $wpdb->prepare("SELECT event_id FROM $events_table WHERE id = %s", $event_id) );
 
       $wpdb->query("DELETE FROM $bets_table WHERE ufc_event_id IN($ufc_event_id)");
       $wpdb->query("DELETE FROM $fights_table WHERE event_id IN($event_id)");
       $wpdb->query("DELETE FROM $events_table WHERE id IN($event_id)");
 
-      //delete from fights and delete from events
-
       $delete_event_success = true;
       $delete_event_success_message = "Event has been deleted.";
 
     }
 
-    // handle add/remove fights submission
+    // handle add/remove fights submission (fights page) =======================
     if ( isset( $_POST['submit'] ) && ($_GET['action'] == 'add-fights') && $_REQUEST['submit'] == "Update Fights" ) {
       global $wpdb;
       $event_id = $_GET['event_id'];
@@ -276,6 +267,7 @@ function ufcBet_events() {
   }
 }
 
+// add event page ==============================================================
 function ufcBet_add_event() {
   $events = file_get_contents('http://ufc-data-api.ufc.com/api/v3/events');
   $events = json_decode($events);
