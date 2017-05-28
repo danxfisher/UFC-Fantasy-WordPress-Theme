@@ -30,6 +30,7 @@
 				<h2>Events</h2>
 				<div class="row event-list">
 
+					<!-- make sure i limit the posts to the most recent 6 (arguments/query) -->
 				<?php if ( have_posts() ) : ?>
 					<?php while ( have_posts() ) : the_post(); ?>
 
