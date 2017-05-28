@@ -21,20 +21,57 @@
 	</div>
 </section>
 
+<?php $events = UfcAPI::getAllEvents() ?>
+
+<section id="s__events">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Events</h2>
+				<div class="row event-list">
+
+				<?php if ( have_posts() ) : ?>
+					<?php while ( have_posts() ) : the_post(); ?>
+
+						<?php $event_id = get_the_title(); ?>
+								<div class="col-md-4 events__item">
+									<a href="<?php echo get_the_permalink(); ?>">
+										<?php foreach($events as $obj){ ?>
+								      <?php if ($obj->id == $event_id) { ?>
+												<div class="col-sm-12 events__thumbnail-image" style="background-image:url('<?php echo $obj->feature_image ?>'); background-color: rgba(0,0,0,0.5);">
+													<div class="test__event-title-wrap">
+														<div class="test__event-title">
+															<?php the_field('event_title'); ?>
+														</div>
+													</div>
+												</div>
+											<?php } } ?>
+										<div class="col-sm-12 events__date-wrap">
+											<div class="events__date">
+												<?php echo date('F j, Y', strtotime(get_field('event_start_date'))); ?>
+											</div>
+										</div>
+									</a>
+								</div>
+
+					<?php endwhile; ?>
+				<?php endif; ?>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
 <section id="news-events">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-md-12">
 				<h2>News</h2>
 				<?php
-					// $news = file_get_contents('http://ufc-data-api.ufc.com/api/v3/news');
-					// $news = json_decode($news);
-
 					$news = UfcAPI::getNewsArticles();
-
 					// most recent 5 news articles
 					$articles = array_slice($news, 0, 6);
-
 				?>
 					<div class="row">
 
@@ -48,9 +85,9 @@
 							<div class="row">
 					<?php	} ?>
 								<div class="col-md-6 news-item">
-									<div class="col-sm-12 thumbnail-image" style="background-image:url('<?php echo $article->thumbnail ?>');">
+									<div class="col-sm-12 news__thumbnail-image" style="background-image:url('<?php echo $article->thumbnail ?>');">
 									</div>
-									<div class="col-sm-12 news-title">
+									<div class="col-sm-12 news__news-title">
 										<a href="http://ufc.com/news/<?php echo $article->url_name ?>"><?php echo $article->title ?></a>
 									</div>
 								</div>
@@ -59,24 +96,7 @@
 					<?php } }	?>
 					</div>
 			</div>
-			<div class="col-md-6">
-				<h2>Events</h2>
-				<div class="row event-list">
 
-				<?php if ( have_posts() ) : ?>
-					<?php while ( have_posts() ) : the_post(); ?>
-
-							<div class="col-md-12 event-item">
-								<a href="<?php echo get_the_permalink(); ?>">
-									<span class="fp-event-title"><?php the_field('event_title'); ?></span> - <?php echo date('F j, Y', strtotime(get_field('event_start_date'))); ?>
-								</a>
-							</div>
-
-					<?php endwhile; ?>
-				<?php endif; ?>
-
-				</div>
-			</div>
 		</div>
 	</div>
 </section>
