@@ -8,6 +8,7 @@
   - [ ] Backend update fights button?
 - [ ] eggtactular: HTML injection here - http://www.danfisher.io/ufc/event-leaderboard/?title=test21%22%3E%3Cu%3E (couldn't escalate to XSS due to WAF  :( )
   - If parameter is incorrect (aka title != a post), show error page (different view of event-leaderboard or whatever page)
+- [ ] Still might not be satisfied with front page ...
 
 ## Top milestones
 

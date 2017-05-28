@@ -179,6 +179,7 @@ nav li:hover {
 .news-title {
   background-color: white;
   padding: 10px;
+  min-height: 100px;
 }
 
 .event-list {
