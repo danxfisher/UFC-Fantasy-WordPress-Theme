@@ -31,6 +31,7 @@
 				<div class="row event-list">
 
 					<!-- make sure i limit the posts to the most recent 6 (arguments/query) -->
+					<!-- title won't always fit (AKA UFC Fight Night) -->
 				<?php if ( have_posts() ) : ?>
 					<?php while ( have_posts() ) : the_post(); ?>
 
