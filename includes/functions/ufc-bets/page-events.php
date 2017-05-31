@@ -96,15 +96,14 @@ function ufcBet_events() {
       // end fights table stuff ===========================
       // ************************************************************
 
-      $now = new DateTime();
-      $date = $now->format('Y-m-d H:i:s');
+      // begin auto generated post *********************************************
+      $post_name = $event_id . '-' . sanitize_title($value_event_title);
 
       $new_event = array (
           'post_title'  =>  $event_id,
-          'post_name'   =>  $event_id,
-          'post_date'   =>  $date,
+          'post_name'   =>  $post_name,
           'post_status' =>  'publish',
-        //'post_type'   =>  'ufc_event'  ,
+          'post_type'   =>  'post'
       );
 
       // create new post for event
@@ -123,8 +122,6 @@ function ufcBet_events() {
       update_field( $key_event_title, $value_event_title, $post_id );
       update_field( $key_event_url, $value_event_url, $post_id );
 
-      // *** if done this way, how can we update the info once ufc updates it? ***
-
       // end auto generated post ***********************************************
 
       $add_event_success = true;
@@ -132,18 +129,17 @@ function ufcBet_events() {
     }
     else {
       $add_event_error = true;
-      $add_event_error_message = 'Error: The event was not added because already exists.';
+      $add_event_error_message = 'Error: The event was not added because it already exists.';
     }
   }
-  // edit event (fights page) ==================================================
-  if (isset($_GET['action']) && $_GET['action'] == 'edit') {
-    global $wpdb;
-    $fights_table = $wpdb->prefix . 'ufcBet_fights';
-    $event_id = $_GET['id'];
+  ?>
+  <?php // edit event (fights page) ================================================== ?>
+  <?php if (isset($_GET['action']) && $_GET['action'] == 'edit'): ?>
+    <?php global $wpdb; ?>
+    <?php $fights_table = $wpdb->prefix . 'ufcBet_fights'; ?>
+    <?php $event_id = $_GET['id']; ?>
+    <?php $fights = $wpdb->get_results($wpdb->prepare("SELECT * FROM $fights_table WHERE event_id = %s", $event_id)); ?>
 
-    $fights = $wpdb->get_results($wpdb->prepare("SELECT * FROM $fights_table WHERE event_id = %s", $event_id));
-
-?>
     <div class="wrap">
       <h1>UFC Bet Management - Edit Fights</h1>
       <form action="admin.php?page=ufcBet-events&amp;action=add-fights&amp;event_id=<?php echo $event_id ?>" method="POST" id="add-event">
@@ -179,8 +175,8 @@ function ufcBet_events() {
       </form>
     </div>
 
-<?php  }
-  else {
+  <?php else: ?>
+  <?php
     // deletion (events page) ==================================================
     if (isset($_GET['action']) && $_GET['action'] == 'delete') {
       global $wpdb;
@@ -231,42 +227,43 @@ function ufcBet_events() {
     ?>
      	<div class="wrap">
      		<h1>UFC Bet Management - Events <a href="admin.php?page=ufcBet-add-event" class="page-title-action">Add Event</a></h1>
-          <?php if ($add_fights_success) { ?>
+          <?php if ($add_fights_success) : ?>
             <div class="notice notice-success is-dismissible">
               <p>
                 <?php echo $add_fights_success_message; ?>
               </p>
             </div>
-          <?php } ?>
-          <?php if ($delete_event_success) { ?>
+          <?php endif; ?>
+          <?php if ($delete_event_success) : ?>
             <div class="notice notice-warning is-dismissible">
               <p>
                 <?php echo $delete_event_success_message; ?>
               </p>
             </div>
-          <?php } ?>
-          <?php if ($add_event_error) { ?>
+          <?php endif; ?>
+          <?php if ($add_event_error) : ?>
             <div class="notice notice-error is-dismissible">
               <p>
                 <?php echo $add_event_error_message; ?>
               </p>
             </div>
-          <?php } ?>
-          <?php if ($add_event_success) { ?>
+          <?php endif; ?>
+          <?php if ($add_event_success) : ?>
             <div class="notice notice-success is-dismissible">
               <p>
                 <?php echo $add_event_success_message; ?>
               </p>
             </div>
-          <?php } ?>
+          <?php endif; ?>
           <p>
             <?php $testListTable->display() ?>
           </p>
      	</div>
-<?php
-  }
-}
+  <?php endif ?>
 
+<?php } ?>
+
+<?php
 // add event page ==============================================================
 function ufcBet_add_event() {
   $events = file_get_contents('http://ufc-data-api.ufc.com/api/v3/events');
