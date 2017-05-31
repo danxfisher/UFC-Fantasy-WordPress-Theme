@@ -2,6 +2,30 @@
 
 ## Next milestones
 
+- [ ] Refactor (html/css):
+  - [x] index.php
+  - [ ] page-betting.php
+    - [ ] why the hell did i use tables?
+  - [ ] page-eventleaderboard.php
+    - [ ] need to complete this yet
+  - [ ] page-leaderboard.php
+  - [x] single.php
+- [ ] Update ufc-bets/page-events.php
+  - [ ] Adds a duplicate post ("-2" at the end of the post name)
+- [ ] Fix date/time field on "Add Event"
+- [ ] If fight is pulled (aka no longer exists via API call), remove it from picks page, picks db, bets db, etc
+  - [ ] Backend update fights button?
+- [ ] eggtactular: HTML injection here - http://www.danfisher.io/ufc/event-leaderboard/?title=test21%22%3E%3Cu%3E (couldn't escalate to XSS due to WAF  :( )
+  - If parameter is incorrect (aka title != a post), show error page (different view of event-leaderboard or whatever page)
+- [x] Auto generate post on "Add Event"
+- [x] ACTUALLY complete the homepage
+- [x] Mobile fixes
+
+## Future milestones
+
+- [ ] Include ACF in theme
+- [ ] Placeholder images/text while loading data from the API... (or loading spinner of some sort)
+- [ ] Break out all bet table calls to own class
 - [ ] Refactor (improve inline php):
   - [x] index.php
   - [ ] page-betting.php
@@ -9,25 +33,9 @@
   - [ ] page-eventleaderboard.php
   - [ ] page-leaderboard.php
   - [ ] single.php
-- [ ] Update ufc-bets/page-events.php
-- [x] Auto generate post on "Add Event"
-  - [ ] Adds a duplicate post ("-2" at the end of the post name)
-- [ ] Fix date/time field on "Add Event"
-- [ ] If fight is pulled (aka no longer exists via API call), remove it from picks page, picks db, bets db, etc
-  - [ ] Backend update fights button?
-- [ ] eggtactular: HTML injection here - http://www.danfisher.io/ufc/event-leaderboard/?title=test21%22%3E%3Cu%3E (couldn't escalate to XSS due to WAF  :( )
-  - If parameter is incorrect (aka title != a post), show error page (different view of event-leaderboard or whatever page)
-- [x] ACTUALLY complete the homepage
-- [x] Mobile fixes
-
-## Top milestones
-
-- [ ] Include ACF in theme
-- [ ] Placeholder images/text while loading data from the API... (or loading spinner of some sort)
-- [ ] Break out all bet table calls to own class
 - [x] Admin panel - Add event only for the current days event or future instead of all pas, present, and future fights
 - [x] Complete front page
-- [ ] Socket.io for live, full screen event board ?
+
 
 ## Icebox
 
@@ -43,6 +51,7 @@
   - [ ] ~~Need to check for when events/fights/fighters change~~
   - [ ] ~~This may not be possible if there is no date modified object~~
 - [ ] ~~Only constant API call should be for news on main page.  Everything else should call from a database. Mmm ... probably not, actually~~
+- [ ] ~~Socket.io for live, full screen event board ?~~
 
 ## Installation
 
