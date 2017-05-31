@@ -3,6 +3,7 @@
 ## Next milestones
 
 - [ ] Refactor (html/css):
+  - [ ] custom.css
   - [x] index.php
   - [ ] page-betting.php
     - [ ] why the hell did i use tables?
