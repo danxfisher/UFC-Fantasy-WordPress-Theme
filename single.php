@@ -177,7 +177,7 @@
 				<div class="col-md-7">
 					<div class="row">
 						<div class="col-md-3" style="text-align: right;">
-							<img src="<?php echo $obj->fighter1_full_body_image; ?>" class="hidden-xs" />
+							<img src="<?php echo $obj->fighter1_full_body_image; ?>" class="hidden-sm hidden-xs" />
 						</div>
 						<div class="col-md-6">
 							<table class="fighter-names">
@@ -374,7 +374,7 @@
 							</table>
 						</div>
 						<div class="col-md-3">
-							<img src="<?php echo $obj->fighter2_full_body_image; ?>" class="hidden-xs" />
+							<img src="<?php echo $obj->fighter2_full_body_image; ?>" class="hidden-sm hidden-xs" />
 						</div>
 					</div>
 				</div>
