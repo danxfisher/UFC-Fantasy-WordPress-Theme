@@ -10,6 +10,7 @@
   - [ ] single.php
 - [ ] Update ufc-bets/page-events.php
 - [x] Auto generate post on "Add Event"
+  - [ ] Adds a duplicate post ("-2" at the end of the post name)
 - [ ] Fix date/time field on "Add Event"
 - [ ] If fight is pulled (aka no longer exists via API call), remove it from picks page, picks db, bets db, etc
   - [ ] Backend update fights button?

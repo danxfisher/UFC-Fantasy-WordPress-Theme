@@ -174,8 +174,13 @@ nav li:hover {
 
 .events__item {
   /*background-color: white;*/
-  padding: 10px;
+  padding: 25px 10px 0 10px;
   margin-bottom: 10px;
+  box-shadow: 0 30px 12px -20px rgba(0, 0, 0, 0.2);
+}
+
+.events__item a:hover {
+  color: #FF5151;
 }
 
 .events__item a {
@@ -215,18 +220,27 @@ nav li:hover {
 
 }
 
-.test__event-title-wrap {
+.events__tagline {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+.events__title-wrap {
   height: 100%;
   width: 100%;
   background-color: rgba(0,0,0,.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.test__event-title {
+.events__title {
   font-family: 'Sternbach-Italic';
   font-weight: bold;
-  font-size: 60px;
+  font-size: 40px;
   color: white;
   text-align: center;
-  padding-top: 45px;
+  line-height: 0.85;
 }
 
 .events__date a {
@@ -253,8 +267,14 @@ nav li:hover {
   text-decoration: none;
 }
 
-.news-item {
-  padding-bottom: 25px;
+.news__item {
+  padding: 25px 10px 0 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 30px 12px -20px rgba(0, 0, 0, 0.2);
+}
+
+.news__item a:hover {
+  color: #FF5151;
 }
 
 .news-title {
@@ -308,7 +328,7 @@ nav li:hover {
 
 .news__news-title a {
   color: #333;
-  font-size: 28px;
+  font-size: 24px;
 }
 
 .news__thumbnail-image {
