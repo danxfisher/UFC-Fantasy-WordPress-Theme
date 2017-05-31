@@ -3,7 +3,7 @@
 ## Next milestones
 
 - [ ] Refactor (improve inline php):
-  - [ ] index.php
+  - [x] index.php
   - [ ] page-betting.php
   - [ ] page-eventleaderboard.php
   - [ ] page-leaderboard.php
@@ -16,7 +16,7 @@
   - [ ] Backend update fights button?
 - [ ] eggtactular: HTML injection here - http://www.danfisher.io/ufc/event-leaderboard/?title=test21%22%3E%3Cu%3E (couldn't escalate to XSS due to WAF  :( )
   - If parameter is incorrect (aka title != a post), show error page (different view of event-leaderboard or whatever page)
-- [ ] ACTUALLY complete the homepage
+- [x] ACTUALLY complete the homepage
 - [ ] Mobile fixes
 
 ## Top milestones
