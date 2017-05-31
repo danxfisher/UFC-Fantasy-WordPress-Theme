@@ -7,8 +7,9 @@
   - [ ] page-betting.php
     - [ ] why the hell did i use tables?
   - [ ] page-eventleaderboard.php
-    - [ ] need to complete this yet
+    - [ ] fix 'back' button
   - [ ] page-leaderboard.php
+    - [ ] need to complete this yet
   - [x] single.php
 - [ ] Update ufc-bets/page-events.php
   - [ ] Adds a duplicate post ("-2" at the end of the post name)
