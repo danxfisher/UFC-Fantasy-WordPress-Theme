@@ -5,6 +5,7 @@
 - [ ] Refactor (improve inline php):
   - [x] index.php
   - [ ] page-betting.php
+    - [ ] why the hell did i use tables?
   - [ ] page-eventleaderboard.php
   - [ ] page-leaderboard.php
   - [ ] single.php
@@ -17,7 +18,7 @@
 - [ ] eggtactular: HTML injection here - http://www.danfisher.io/ufc/event-leaderboard/?title=test21%22%3E%3Cu%3E (couldn't escalate to XSS due to WAF  :( )
   - If parameter is incorrect (aka title != a post), show error page (different view of event-leaderboard or whatever page)
 - [x] ACTUALLY complete the homepage
-- [ ] Mobile fixes
+- [x] Mobile fixes
 
 ## Top milestones
 
