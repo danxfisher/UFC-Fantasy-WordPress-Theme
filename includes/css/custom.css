@@ -556,7 +556,7 @@ sup {
   width: 100%;
   text-align: center;
   font-size: 24px;
-  padding: 35px 0;
+  padding: 85px 0;
 }
 
 #close-bet-success {
@@ -598,6 +598,11 @@ sup {
 
 .bet-img {
 
+}
+
+.bet__fighter-names {
+  font-size: 20px;
+  padding: 10px 0;
 }
 
 .bet-fight-title {
@@ -787,7 +792,7 @@ footer {
  * media queries
  *===========================================*/
 
-@media only screen and (max-width : 768px) {
+@media only screen and (max-width: 768px) {
   #header {
     font-size: 150px;
   }
@@ -804,7 +809,7 @@ footer {
     font-size: 48px;
   }
 
-  .fight-title-text {
+  .fighter-title-text {
     text-align: center;
     padding-top: 0;
     padding-bottom: 40px;
