@@ -2,14 +2,21 @@
 
 ## Next milestones
 
-- [ ] Update and refactor ufc-bets/page-events.php
+- [ ] Refactor (improve inline php):
+  - [ ] index.php
+  - [ ] page-betting.php
+  - [ ] page-eventleaderboard.php
+  - [ ] page-leaderboard.php
+  - [ ] single.php
+- [ ] Update ufc-bets/page-events.php
 - [x] Auto generate post on "Add Event"
 - [ ] Fix date/time field on "Add Event"
 - [ ] If fight is pulled (aka no longer exists via API call), remove it from picks page, picks db, bets db, etc
   - [ ] Backend update fights button?
 - [ ] eggtactular: HTML injection here - http://www.danfisher.io/ufc/event-leaderboard/?title=test21%22%3E%3Cu%3E (couldn't escalate to XSS due to WAF  :( )
   - If parameter is incorrect (aka title != a post), show error page (different view of event-leaderboard or whatever page)
-- [ ] Still might not be satisfied with front page ...
+- [ ] ACTUALLY complete the homepage
+- [ ] Mobile fixes
 
 ## Top milestones
 
@@ -22,8 +29,8 @@
 
 ## Icebox
 
+- [ ] Profile pages with stupid achievements
 - [ ] Break events page out to custom post type ?
-- [ ] Refactor code
 - [ ] Improve page speed and performance
 - [ ] Lots of other stuff
 - [ ] Prevent unwanted access to /wp-includes
