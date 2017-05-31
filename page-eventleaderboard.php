@@ -233,7 +233,7 @@ foreach ($leader_bets as $bet) {
       </div>
       <div class="row">
         <div class="col-md-12">
-
+          <?php $fights = array_reverse($fights); ?>
           <?php foreach ($fights as $fight) { ?>
             <?php $bets = $wpdb->get_results($wpdb->prepare("SELECT * FROM $bets_table WHERE ufc_event_id = %s AND ufc_fight_id = %s", $ufc_event_id, $fight->ufc_fight_id)); ?>
             <div class="event-ldr-wrap">
