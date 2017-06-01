@@ -8,6 +8,8 @@
   - [ ] fix 'back' button
 - [ ] page-leaderboard.php
   - [ ] need to complete this yet
+- [ ] page-betting.php
+  - [ ] fix when no fights available for betting.
 
 ## Next milestones
 
