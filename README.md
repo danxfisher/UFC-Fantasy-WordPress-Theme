@@ -1,5 +1,14 @@
 # UFC Fantasy WordPress Theme
 
+## Mission Critical: Complete by **Friday June 2nd**
+
+- [ ] Fix date/time field on "Add Event"
+- [ ]
+- [ ] page-eventleaderboard.php
+  - [ ] fix 'back' button
+- [ ] page-leaderboard.php
+  - [ ] need to complete this yet
+
 ## Next milestones
 
 - [ ] Refactor (html/css):
@@ -13,7 +22,7 @@
     - [ ] need to complete this yet
   - [x] single.php
 - [ ] Update ufc-bets/page-events.php
-  - [ ] Adds a duplicate post ("-2" at the end of the post name)
+  - [x] Adds a duplicate post ("-2" at the end of the post name)
 - [ ] Fix date/time field on "Add Event"
 - [ ] If fight is pulled (aka no longer exists via API call), remove it from picks page, picks db, bets db, etc
   - [ ] Backend update fights button?
