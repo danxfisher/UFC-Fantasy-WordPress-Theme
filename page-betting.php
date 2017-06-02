@@ -185,12 +185,12 @@ if ($ufc_event_id && $event_title) {
               <div class="col-md-12 bet-fights">
                 <?php foreach ($fights_order as $fight) { ?>
                   <div class="row">
-                    <div class="col-md-12 bet-fight-title">
+                    <div class="col-md-12 bet-fight-title bet__header">
                       <?php echo $fight->weight_class ?>
                     </div>
                   </div>
                   <input type="hidden" name="<?php echo $fight->id; ?>" id="<?php echo $fight->id; ?>" value="<?php $betValue = 0;foreach($bets as $bet){if ($bet->fight_id == $fight->id){if ($bet->fighter_selected == $fight->fighter1){$betValue = 'fighter1';}else{$betValue = 'fighter2';}}}echo $betValue;?>">
-                  <div class="row">
+                  <div class="row bet__padding-bottom">
                     <div class="col-xs-5 fight-<?php echo $fight->id ?> bet-fighter fighter-1<?php if ($betValue === 'fighter1'){echo ' bet-fighter-selected';}?>" id="<?php echo $fight->id ?>-fighter1">
                       <?php foreach ($ufc_event as $event_fight): ?>
                         <?php if ($fight->ufc_fight_id == $event_fight->id): ?>
