@@ -177,7 +177,7 @@ foreach ($leader_bets as $bet) {
     <div class="row">
       <div class="col-md-12 button-wrap">
         <?php $event_url = str_replace(" ", "-", $event_title); ?>
-        <a href="<?php echo site_url() . '/' . $event_url ?>">
+        <a href="<?php echo site_url() . '/' . $ufc_event_id . '-' . $event_url ?>">
           <div class="dark-button">
             Back to <?php echo $event_title ?> Event Page
           </div>
