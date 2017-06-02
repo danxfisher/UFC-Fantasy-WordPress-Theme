@@ -704,10 +704,11 @@ table.table-event-leaderboard td {
 }
 
 .event-ldr-row {
-  border-bottom: 3px solid #FF5151;
+  border-bottom: 5px solid #FF5151;
   margin-bottom: 15px;
   background-color: #444;
   color: white;
+  padding: 10px;
 }
 
 .event-ldr-fighter{
