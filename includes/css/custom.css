@@ -572,6 +572,11 @@ sup {
 
 .bet-fights {
   text-align: center;
+  padding-bottom: 20px;
+}
+
+.bet__padding-bottom {
+  padding-bottom: 25px;
 }
 
 .bet-fights table {
@@ -584,12 +589,12 @@ sup {
 }
 
 .bet-fighter-selected {
-  background-color: #333;
+  background-color: #444;
   color: white;
   font-weight: bold;
 }
 
-.bet-fights table td {
+.bet-fights {
   text-align: center;
   font-size: 20px;
   /*padding: 10px 0;*/
@@ -628,13 +633,14 @@ sup {
   padding: 125px 0;
 }
 
-td.bet-fight-title {
+.bet-fight-title {
   text-transform: uppercase;
   text-align: center;
-  font-size: 16px !important;
-  letter-spacing: 6px;
+  font-size: 18px !important;
+  color: white;
+  font-weight: bold;
   border-top: 5px solid #FF5151;
-  background: #eeeeee;
+  background: #444;
 }
 
 input[type='submit'] {
