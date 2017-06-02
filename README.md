@@ -3,7 +3,7 @@
 ## Mission critical: complete by **Friday June 2nd**
 
 - [ ] fix date/time field on "Add Event" (or at least use a placeholder)
-- [ ] index - show only present day or future events
+- [x] index - show only present day or future events
 - [ ] page-eventleaderboard.php
   - [ ] fix 'back' button
 - [ ] page-leaderboard.php

@@ -30,10 +30,23 @@
 				<h2>Upcoming Events</h2>
 				<div class="row event-list">
 
-				<!-- make sure i limit the posts to the current or future events (arguments/query) -->
+				<?php $today = date('Y-m-d'); ?>
+				<?php $args = array(
+								'post_type'		=> 'post',
+								'meta_query'	=>  array (
+																		array(
+															        'key'		=> 'event_start_date',
+															        'compare'	=> '>=',
+															        'value'		=> $today,
+																    )
+																	),
+							);
+				?>
 
-				<?php if ( have_posts() ) : ?>
-					<?php while ( have_posts() ) : the_post(); ?>
+				<?php $the_query = new WP_Query( $args ); ?>
+
+				<?php if ( $the_query->have_posts() ) : ?>
+					<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
 
 						<?php $event_id = get_the_title(); ?>
 							<div class="col-md-4 events__item">
