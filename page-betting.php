@@ -227,9 +227,17 @@ if ($ufc_event_id && $event_title) {
               <!-- </div> -->
             </div>
             <div class="row">
-              <div class="col-md-12 bet-fights-submit">
-                <input type="submit" name="submit" id="add-bets-submit" value="Confirm Bets" />
-              </div>
+              <?php if ($fights_order) : ?>
+                <div class="col-md-12 bet-fights-submit">
+                  <input type="submit" name="submit" id="add-bets-submit" value="Confirm Bets" />
+                </div>
+              <?php else: ?>
+                <div class="col-md-12">
+                  <div class="bet-locked">
+                    There are currently <span style="font-weight: bold;">no fights</span> to select.
+                  </div>
+                </div>
+              <?php endif ?>
             </div>
           </form>
           <?php } else { ?>
