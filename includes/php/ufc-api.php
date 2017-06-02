@@ -8,7 +8,7 @@ class UfcAPI
   }
 
   // get the latest news articles from UFC
-  public function getNewsArticles() {
+  public static function getNewsArticles() {
     $content = file_get_contents('http://ufc-data-api.ufc.com/api/v3/news');
     $content = json_decode($content);
 
@@ -16,7 +16,7 @@ class UfcAPI
   }
 
   // get all scheduled UFC events
-  public function getAllEvents() {
+  public static function getAllEvents() {
     $content = file_get_contents('http://ufc-data-api.ufc.com/api/v3/events');
   	$content = json_decode($content);
 
@@ -24,7 +24,7 @@ class UfcAPI
   }
 
   // get UFC event by event id
-  public function getEventByID($event_id) {
+  public static function getEventByID($event_id) {
     $url = 'http://ufc-data-api.ufc.com/api/v3/events/' . $event_id . '/fights';
     $content = file_get_contents($url);
     $content = json_decode($content);
@@ -33,12 +33,12 @@ class UfcAPI
   }
 
   // get UFC event by title and date
-  public function getEventByTitleAndDate() {
+  public static function getEventByTitleAndDate() {
 
   }
 
   // get fights for UFC event
-  public function getFightsForEvent($event_id) {
+  public static function getFightsForEvent($event_id) {
     $url = 'http://ufc-data-api.ufc.com/api/v3/events/' . $event_id . '/fights';
     $content = file_get_contents($url);
     $content = json_decode($content);

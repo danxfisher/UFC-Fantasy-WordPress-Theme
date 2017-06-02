@@ -10,6 +10,7 @@
   - [ ] need to complete this yet
 - [x] page-betting.php
   - [x] fix when no fights available for betting.
+- [ ] Include ACF in theme
 
 ## Next milestones
 
@@ -36,7 +37,7 @@
 
 ## Future milestones
 
-- [ ] Include ACF in theme
+
 - [ ] Placeholder images/text while loading data from the API... (or loading spinner of some sort)
 - [ ] Break out all bet table calls to own class
 - [ ] Refactor (improve inline php):

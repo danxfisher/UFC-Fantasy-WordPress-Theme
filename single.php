@@ -141,8 +141,9 @@
 
 			// loop through each fight
 			foreach ($main_card_order as $obj) {
+
 				$is_betting_enabled = $wpdb->get_var($wpdb->prepare("SELECT is_betting_enabled FROM $fights_table WHERE ufc_event_id = %s AND ufc_fight_id = %s", $event_id, $obj->id));
-				if ($is_betting_enabled == '1') {
+				if ($is_betting_enabled > 0) {
 			?>
 					<div class="fighter-background">
 						<div class="row">

@@ -113,9 +113,15 @@ function ufcBet_events() {
       $ufc_event_date = $dt->format('Y-m-d');
 
       // ACF keys for custom fields to store event data
-      $key_event_start_date = 'field_58d22e612f794';
-      $key_event_title = 'field_58d22ef658473';
-      $key_event_url = 'field_58d34ad4e7227';
+      // THIS IS DEV
+      // $key_event_start_date = 'field_58d22e612f794';
+      // $key_event_title = 'field_58d22ef658473';
+      // $key_event_url = 'field_58d34ad4e7227';
+
+      // THIS IS PRODUCTION
+      $key_event_start_date = 'field_58435ca0c9a9f';
+      $key_event_title = 'field_5930f24a5239b';
+      $key_event_url = 'field_5930f26d5239c';
 
       // update ACF fields with UFC API data in post
 			update_field( $key_event_start_date, $ufc_event_date, $post_id );
@@ -261,9 +267,7 @@ function ufcBet_events() {
      	</div>
   <?php endif ?>
 
-<?php } ?>
-
-<?php
+<?php }
 // add event page ==============================================================
 function ufcBet_add_event() {
   $events = file_get_contents('http://ufc-data-api.ufc.com/api/v3/events');
