@@ -178,10 +178,6 @@ if ($ufc_event_id && $event_title) {
           ?>
           <form action="?action=add-bets&amp;ufc_event_id=<?php echo $ufc_event_id ?>&amp;title=<?php echo $event_title ?>" method="POST" id="add-bets">
             <div class="row">
-              <!-- <div class="col-md-4"> -->
-                <!-- nothing -->
-              <!-- </div> -->
-
               <div class="col-md-12 bet-fights">
                 <?php foreach ($fights_order as $fight) { ?>
                   <div class="row">
@@ -201,8 +197,8 @@ if ($ufc_event_id && $event_title) {
                         <?php echo $fight->fighter1; ?>
                       </p>
                     </div>
-                    <div class="col-xs-2">
-
+                    <div class="col-xs-2 bet__vs">
+                      vs.
                     </div>
                     <div class="col-xs-5 fight-<?php echo $fight->id ?> bet-fighter fighter-2<?php if ($betValue === 'fighter2'){echo ' bet-fighter-selected';}?>" id="<?php echo $fight->id ?>-fighter2">
                       <?php foreach ($ufc_event as $event_fight): ?>
@@ -215,21 +211,13 @@ if ($ufc_event_id && $event_title) {
                       </p>
                     </div>
                   </div>
-
-
-
-
-
                 <?php } ?>
               </div>
-              <!-- <div class="col-md-4"> -->
-                <!-- nothing -->
-              <!-- </div> -->
             </div>
             <div class="row">
               <?php if ($fights_order) : ?>
                 <div class="col-md-12 bet-fights-submit">
-                  <input type="submit" name="submit" id="add-bets-submit" value="Confirm Bets" />
+                  <input type="submit" name="submit" id="add-bets-submit" value="Confirm Picks" />
                 </div>
               <?php else: ?>
                 <div class="col-md-12">

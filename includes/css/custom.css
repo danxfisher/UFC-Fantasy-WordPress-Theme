@@ -611,7 +611,7 @@ sup {
 }
 
 .bet-fight-title {
-  padding: 10px 0;
+  padding: 15px 0;
 }
 
 .bet-fighter-td {
@@ -641,6 +641,11 @@ sup {
   font-weight: bold;
   border-top: 5px solid #FF5151;
   background: #444;
+}
+
+.bet__vs {
+  font-size: 24px;
+  padding-top: 10%;
 }
 
 input[type='submit'] {
@@ -708,7 +713,7 @@ table.table-event-leaderboard td {
   margin-bottom: 15px;
   background-color: #444;
   color: white;
-  padding: 10px;
+  padding: 15px 10px;
 }
 
 .event-ldr-fighter{
@@ -716,6 +721,8 @@ table.table-event-leaderboard td {
   text-align: center;
   font-weight: bold;
   text-transform: uppercase;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .event-ldr-vs {
@@ -831,6 +838,14 @@ footer {
     font-size: 14px;
   }
 
+  .bet-fight-title {
+    padding: 8px 0;
+  }
+
+  .bet-fight-title {
+    font-size: 14px !important;
+  }
+
   table.table-event-leaderboard td, table.table-event-leaderboard th {
     font-size: 12px;
     padding-left: 5px 0 5px 5px;
@@ -840,12 +855,16 @@ footer {
     /*display: none;*/
   }
 
-  .event-ldr-fighter {
-    font-size: 12px;
+  .event-ldr-fighter, .bet__fighter-names, .bet__vs, .event-ldr-vs {
+    font-size: 14px;
   }
 
   .event-ldr-users {
     font-size: 10px;
+  }
+
+  .event-ldr-row {
+    padding: 5px;
   }
 
   footer {
