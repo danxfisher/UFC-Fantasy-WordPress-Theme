@@ -269,7 +269,7 @@ foreach ($leader_bets as $bet) {
               </div>
 
               <div class="row ldr-bets">
-                <div class="col-xs-5 event-ldr-users<?php if($fight->fighter1 === $fight->winner) { ?> event-ldr-winner<?php } ?>">
+                <div class="col-xs-5 event-ldr-users<?php if($fight->fighter1 === $fight->winner) { ?> event-ldr-winner-bet<?php } ?>">
                   <!-- usea -->
                   <?php
                   foreach ($bets as $bet) {
@@ -282,7 +282,7 @@ foreach ($leader_bets as $bet) {
                 <div class="col-xs-2">
                   <!-- nothing -->
                 </div>
-                <div class="col-xs-5 event-ldr-users<?php if($fight->fighter2 === $fight->winner) { ?> event-ldr-winner<?php } ?>">
+                <div class="col-xs-5 event-ldr-users<?php if($fight->fighter2 === $fight->winner) { ?> event-ldr-winner-bet<?php } ?>">
                   <?php foreach ($bets as $bet) {
                     if ($bet->fighter_selected === $fight->fighter2) {
                         echo $bet->username . '<br />';

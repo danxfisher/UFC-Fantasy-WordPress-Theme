@@ -77,6 +77,10 @@
 							</div>
 
 					<?php endwhile; ?>
+				<?php else : ?>
+					<div class="col-md-12 events__no-event">
+						No upcoming events.
+					</div>
 				<?php endif; ?>
 
 				</div>
@@ -129,7 +133,7 @@
 												</div>
 											</div>
 
-											<?php if (($thedate = get_field('event_start_date')) && date('H') > 19) : ?>
+											<?php if (($thedate == get_field('event_start_date')) && date('H') > 19 && date('H') < 23) : ?>
 												<div class="col-sm-12 results__live">
 													Live
 												</div>

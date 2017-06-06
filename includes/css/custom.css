@@ -247,7 +247,11 @@ nav li:hover {
   font-size: 24px;
 }
 
-
+.events__no-event {
+  font-size: 28px;
+  padding: 25px 0;
+  text-align: center;
+}
 
 #s__results {
   background: #e7e7e7;
@@ -760,6 +764,7 @@ table.table-event-leaderboard td {
   background-color: #bebebe;
   text-align: center;
   padding: 10px 0;
+  font-size: 16px;
 }
 
 .ldr-bets {
@@ -768,6 +773,9 @@ table.table-event-leaderboard td {
 
 .event-ldr-winner {
   background-color: #88cea1;
+}
+
+.event-ldr-winner-bet {
   font-weight: bold;
 }
 
