@@ -2,41 +2,26 @@
 
 ## Mission critical: complete by **Friday June 9th**
 
-- [x] fix date/time field on "Add Event" (or at least use a placeholder)
-- [x] index - show only present day or future events
-- [x] page-eventleaderboard.php
-  - [x] fix 'back' button
-- [ ] page-leaderboard.php
-  - [ ] need to complete this yet
-- [x] page-betting.php
-  - [x] fix when no fights available for betting.
 - [ ] Include ACF in theme
-- [x] Mobile fixes
-- [x] index.php
-  - [x] "Results" section with Live button if current time == fight time
+- [ ] Create pages on theme activation
+- [ ] Can `Settings > Permalinks > Post name` be done on theme activation?
 
 ## Next milestones
 
+- [ ] If fight is pulled (aka no longer exists via API call), remove it from picks page, picks db, bets db, etc
+  - [ ] Backend update fights button?
 - [ ] Refactor (html/css):
   - [ ] custom.css
   - [x] index.php
   - [ ] page-betting.php
     - [ ] why the hell did i use tables?
   - [ ] page-eventleaderboard.php
-    - [ ] fix 'back' button
+    - [x] fix 'back' button
   - [ ] page-leaderboard.php
-    - [ ] need to complete this yet
+    - [x] need to complete this yet
   - [x] single.php
-- [ ] Update ufc-bets/page-events.php
-  - [x] Adds a duplicate post ("-2" at the end of the post name)
-- [ ] Fix date/time field on "Add Event"
-- [ ] If fight is pulled (aka no longer exists via API call), remove it from picks page, picks db, bets db, etc
-  - [ ] Backend update fights button?
 - [ ] eggtactular: HTML injection here - http://www.danfisher.io/ufc/event-leaderboard/?title=test21%22%3E%3Cu%3E (couldn't escalate to XSS due to WAF  :( )
   - If parameter is incorrect (aka title != a post), show error page (different view of event-leaderboard or whatever page)
-- [x] Auto generate post on "Add Event"
-- [x] ACTUALLY complete the homepage
-- [x] Mobile fixes
 
 ## Future milestones
 
@@ -49,9 +34,6 @@
   - [ ] page-eventleaderboard.php
   - [ ] page-leaderboard.php
   - [ ] single.php
-- [x] Admin panel - Add event only for the current days event or future instead of all pas, present, and future fights
-- [x] Complete front page
-
 
 ## Icebox
 
@@ -60,6 +42,27 @@
 - [ ] Improve page speed and performance
 - [ ] Lots of other stuff
 - [ ] Prevent unwanted access to /wp-includes
+
+## Completed
+
+- [x] Admin panel - Add event only for the current days event or future instead of all past, present, and future fights
+- [x] Complete front page
+- [x] Auto generate post on "Add Event"
+- [x] ACTUALLY complete the homepage
+- [x] Mobile fixes
+- [x] index.php
+  - [x] "Results" section with Live button if current time == fight time
+- [x] fix date/time field on "Add Event" (or at least use a placeholder)
+- [x] index - show only present day or future events
+- [x] page-eventleaderboard.php
+  - [x] fix 'back' button
+- [x] page-leaderboard.php
+  - [x] need to complete this yet
+- [x] page-betting.php
+  - [x] fix when no fights available for betting.
+  - [x] Update ufc-bets/page-events.php
+    - [x] Adds a duplicate post ("-2" at the end of the post name)
+
 
 ## Canceled
 
