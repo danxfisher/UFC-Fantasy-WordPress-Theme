@@ -287,10 +287,10 @@ function ufcBet_add_event() {
 
               foreach($events_asc as $obj){
 
-                //if (date(DATE_ATOM) <= $obj->event_date) {
+                if (date(DATE_ATOM) <= $obj->event_date) {
                   $the_date = date('F j, Y', strtotime($obj->event_date));
                   echo "<option value='" . $obj->id . "'>" . $obj->base_title . ' - ' . $the_date . '</option>';
-                //}
+                }
               }
               ?>
             </select>
