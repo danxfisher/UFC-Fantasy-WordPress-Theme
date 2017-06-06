@@ -30,7 +30,7 @@
 				<h2>Upcoming Events</h2>
 				<div class="row event-list">
 
-				<?php $today = date('Y-m-d'); ?>
+				<?php $today = date('Y-m-d', time() - 86400); ?>
 				<?php $args = array(
 								'post_type'		=> 'post',
 								'meta_query'	=>  array (

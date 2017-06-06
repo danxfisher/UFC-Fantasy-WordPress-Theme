@@ -19,9 +19,13 @@ $event_title = $_GET['title'];
 $fights_table = $wpdb->prefix . 'ufcBet_fights';
 $fights = $wpdb->get_results($wpdb->prepare("SELECT * FROM $fights_table WHERE ufc_event_id = %s AND is_betting_enabled = 1", $ufc_event_id));
 
+echo count($fights);
+
 // get bets
 $bets_table = $wpdb->prefix . 'ufcBet_bets';
 $bets = $wpdb->get_results($wpdb->prepare("SELECT * FROM $bets_table WHERE ufc_event_id = %s", $ufc_event_id));
+
+echo count($bets);
 
 // $ufc_event_url = 'http://ufc-data-api.ufc.com/api/v3/events/' . $ufc_event_id . '/fights';
 // $ufc_event = file_get_contents($ufc_event_url);

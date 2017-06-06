@@ -1,6 +1,6 @@
 # UFC Fantasy WordPress Theme
 
-## Mission critical: complete by **Friday June 2nd**
+## Mission critical: complete by **Friday June 9th**
 
 - [x] fix date/time field on "Add Event" (or at least use a placeholder)
 - [x] index - show only present day or future events
@@ -12,6 +12,8 @@
   - [x] fix when no fights available for betting.
 - [ ] Include ACF in theme
 - [ ] Mobile fixes
+- [ ] index.php
+  - [ ] "Results" section with Live button if current time == fight time
 
 ## Next milestones
 
