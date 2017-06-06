@@ -55,37 +55,37 @@ foreach ($events as $event) {
 
         if (isset($ufc_fight->fighter1_is_winner) && isset($ufc_fight->fighter2_is_winner)){
           if ($ufc_fight->fighter1_is_winner){
+            
+            $winner = $fight->fighter1;
+            $wpdb->update($fights_table, array('winner' => $winner), array( 'ufc_fight_id' => $fight->ufc_fight_id ), array('%s'), array( '%d' ));
+
             // add winner to fights table
             // add is_correct to bets table
             foreach ($all_bets as $bet){
               if ($bet->ufc_fight_id == $ufc_fight->id) {
-
-                $winner = $fight->fighter1;
-                $wpdb->update($fights_table, array('winner' => $winner), array( 'ufc_fight_id' => $fight->ufc_fight_id ), array('%s'), array( '%d' ));
-
                 if($winner == $bet->fighter_selected){
-                  $wpdb->update($bets_table, array('is_correct' => '1', 'is_complete' => '1'), array( 'ufc_fight_id' => $fight->ufc_fight_id ), array('%d', '%d'), array( '%d' ));
+                  $wpdb->update($bets_table, array('is_correct' => '1', 'is_complete' => '1'), array( 'ufc_fight_id' => $fight->ufc_fight_id, 'id' => $bet->id ), array('%d', '%d'), array( '%d', '%d' ));
                 }
                 else {
-                  $wpdb->update($bets_table, array('is_correct' => '0', 'is_complete' => '1'), array( 'ufc_fight_id' => $fight->ufc_fight_id ), array('%d', '%d'), array( '%d' ));
+                  $wpdb->update($bets_table, array('is_correct' => '0', 'is_complete' => '1'), array( 'ufc_fight_id' => $fight->ufc_fight_id, 'id' => $bet->id ), array('%d', '%d'), array( '%d', '%d' ));
                 }
               }
             }
           }
           elseif ($ufc_fight->fighter2_is_winner){
+
+            $winner = $fight->fighter2;
+            $wpdb->update($fights_table, array('winner' => $winner), array( 'ufc_fight_id' => $fight->ufc_fight_id ), array('%s'), array( '%d' ));
+
             // add winner to fights table
             // add is_correct to bets table
             foreach ($all_bets as $bet){
               if ($bet->ufc_fight_id == $ufc_fight->id) {
-
-                $winner = $fight->fighter2;
-                $wpdb->update($fights_table, array('winner' => $winner), array( 'ufc_fight_id' => $fight->ufc_fight_id ), array('%s'), array( '%d' ));
-
                 if($winner == $bet->fighter_selected){
-                  $wpdb->update($bets_table, array('is_correct' => '1', 'is_complete' => '1'), array( 'ufc_fight_id' => $fight->ufc_fight_id ), array('%d', '%d'), array( '%d' ));
+                  $wpdb->update($bets_table, array('is_correct' => '1', 'is_complete' => '1'), array( 'ufc_fight_id' => $fight->ufc_fight_id, 'id' => $bet->id ), array('%d', '%d'), array( '%d', '%d' ));
                 }
                 else {
-                  $wpdb->update($bets_table, array('is_correct' => '0', 'is_complete' => '1'), array( 'ufc_fight_id' => $fight->ufc_fight_id ), array('%d', '%d'), array( '%d' ));
+                  $wpdb->update($bets_table, array('is_correct' => '0', 'is_complete' => '1'), array( 'ufc_fight_id' => $fight->ufc_fight_id, 'id' => $bet->id ), array('%d', '%d'), array( '%d', '%d' ));
                 }
               }
             }
