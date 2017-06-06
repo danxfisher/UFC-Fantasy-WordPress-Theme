@@ -23,6 +23,8 @@
 
 <?php $events = UfcAPI::getAllEvents() ?>
 
+<?php date_default_timezone_set('America/Los_Angeles'); ?>
+
 <section id="s__events">
 	<div class="container">
 		<div class="row">
@@ -60,6 +62,78 @@
 													</div>
 												</div>
 											</div>
+
+											<div class="col-sm-12 events__date-wrap">
+												<div class="events__tagline">
+													<?php echo $obj->title_tag_line ?>
+												</div>
+												<div class="events__date">
+													<?php echo date('F j, Y', strtotime(get_field('event_start_date'))); ?>
+												</div>
+											</div>
+									<?php endif; ?>
+									<?php endforeach; ?>
+								</a>
+							</div>
+
+					<?php endwhile; ?>
+				<?php endif; ?>
+
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section id="s__results">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<h2>Results</h2>
+				<div class="row event-list">
+
+				<?php wp_reset_query(); ?>
+				<?php wp_reset_postdata(); ?>
+
+
+
+				<?php $thedate = date('Y-m-d'); ?>
+				<?php $args_results = array(
+								'post_type'		=> 'post',
+								'posts_per_page'	=>	'3',
+								'meta_query'	=>  array (
+																		array(
+															        'key'		=> 'event_start_date',
+															        'compare'	=> '<=',
+															        'value'		=> $thedate,
+																    )
+																	),
+							);
+				?>
+
+				<?php $the_results_query = new WP_Query( $args_results ); ?>
+
+				<?php if ( $the_results_query->have_posts() ) : ?>
+					<?php while ( $the_results_query->have_posts() ) : $the_results_query->the_post(); ?>
+
+						<?php $event_id = get_the_title(); ?>
+							<div class="col-md-4 events__item">
+								<a href="<?php echo get_the_permalink(); ?>">
+									<?php foreach($events as $obj): ?>
+							      <?php if ($obj->id == $event_id): ?>
+											<div class="col-sm-12 events__thumbnail-image" style="background-image:url('<?php echo $obj->feature_image ?>'); background-color: rgba(0,0,0,0.5);">
+												<div class="events__title-wrap">
+													<div class="events__title">
+														<?php the_field('event_title'); ?>
+													</div>
+												</div>
+											</div>
+
+											<?php if (($thedate = get_field('event_start_date')) && date('H') > 19) : ?>
+												<div class="col-sm-12 results__live">
+													Live
+												</div>
+											<?php endif; ?>
 
 											<div class="col-sm-12 events__date-wrap">
 												<div class="events__tagline">

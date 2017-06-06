@@ -249,6 +249,32 @@ nav li:hover {
 
 
 
+#s__results {
+  background: #e7e7e7;
+}
+
+#s__results h2 {
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+  font-size: 42px;
+  font-weight: bold;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 5px solid #FF5151;
+}
+
+.results__live {
+  background-color: #FF5151;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 18px;
+  text-align: center;
+  font-style: italic;
+}
+
+
+
 #news-events {
   background: #e7e7e7;
 }
