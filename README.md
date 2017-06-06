@@ -11,7 +11,7 @@
 - [x] page-betting.php
   - [x] fix when no fights available for betting.
 - [ ] Include ACF in theme
-- [ ] Mobile fixes
+- [x] Mobile fixes
 - [x] index.php
   - [x] "Results" section with Live button if current time == fight time
 
