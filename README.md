@@ -3,8 +3,9 @@
 ## Mission critical: complete by **Friday June 9th**
 
 - [ ] Include ACF in theme
-- [ ] Create pages on theme activation
-- [ ] Can `Settings > Permalinks > Post name` be done on theme activation?
+- [x] Create pages on theme activation
+- [x] Can `Settings > Permalinks > Post name` be done on theme activation?
+- [ ] Default the reCaptcha **Off**
 
 ## Next milestones
 
