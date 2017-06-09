@@ -23,4 +23,7 @@ require_once(get_template_directory().'/includes/functions/ufc-bets/page-fights.
 
 // install bets pages
 require_once(get_template_directory().'/includes/functions/ufc-bets/page-bets.php');
+
+// add pages with the correct templates to the front end
+require_once(get_template_directory().'/includes/functions/ufc-bets/user-pages.php');
 ?>
