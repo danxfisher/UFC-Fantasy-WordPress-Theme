@@ -5,7 +5,7 @@
 - [ ] Include ACF in theme
 - [x] Create pages on theme activation
 - [x] Can `Settings > Permalinks > Post name` be done on theme activation?
-- [ ] Default the reCaptcha **Off**
+- [x] Default the reCaptcha **Off**
 
 ## Next milestones
 
