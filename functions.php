@@ -42,6 +42,9 @@ if ($captcha_enabled == 'yes') {
 // adds multiple language support
 require_once(get_template_directory().'/includes/functions/languages.php');
 
+// adds multiple language support
+require_once(get_template_directory().'/includes/functions/advanced-custom-fields.php');
+
 // add woocommerce theme support
 // require_once(get_template_directory().'/includes/functions/woocommerce.php');
 
