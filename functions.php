@@ -43,6 +43,6 @@ require_once(get_template_directory().'/includes/functions/languages.php');
 // require_once(get_template_directory().'/includes/php/footer-builder/footer-builder.php');
 
 // add customizer options
-require get_template_directory() . '/includes/customizer.php';
+// require get_template_directory() . '/includes/customizer.php';
 
 ?>
