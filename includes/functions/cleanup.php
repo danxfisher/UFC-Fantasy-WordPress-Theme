@@ -24,8 +24,15 @@ add_action('after_setup_theme', 'remove_admin_bar');
 
 // on login, redirect user to home page if not admin
 function ufc_login_redirect( $redirect_to, $request, $user  ) {
-    return (isset($user->roles) && is_array($user->roles) && in_array('administrator', $user->roles)) ? admin_url() : site_url();
+  return (isset($user->roles) && is_array($user->roles) && in_array('administrator', $user->roles)) ? admin_url() : site_url();
 }
 add_filter( 'login_redirect', 'ufc_login_redirect', 10, 3 );
+
+// on init, change the permalink structure for our site
+add_action('init', function() {
+  global $wp_rewrite;
+  $wp_rewrite->set_permalink_structure( '/%postname%/' );
+});
+
 
 ?>
