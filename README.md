@@ -1,13 +1,8 @@
 # UFC Fantasy WordPress Theme
 
-## Mission critical: complete by **Friday June 9th**
+The majority of this theme is completed and it is fully functioning.  I will do some clean up soon so the code isn't as shitty.  I need to finish the documentation as well.  I will likely only update this sparingly if necessary.  Enjoy.
 
-- [x] Include ACF in theme
-- [x] Create pages on theme activation
-- [x] Can `Settings > Permalinks > Post name` be done on theme activation?
-- [x] Default the reCaptcha **Off**
-
-## Next milestones
+## Future milestones
 
 - [ ] If fight is pulled (aka no longer exists via API call), remove it from picks page, picks db, bets db, etc
   - [ ] Backend update fights button?
@@ -15,7 +10,7 @@
   - [ ] custom.css
   - [x] index.php
   - [ ] page-betting.php
-    - [ ] why the hell did i use tables?
+    - [x] why the hell did i use tables?
   - [ ] page-eventleaderboard.php
     - [x] fix 'back' button
   - [ ] page-leaderboard.php
@@ -23,18 +18,8 @@
   - [x] single.php
 - [ ] eggtactular: HTML injection here - http://www.danfisher.io/ufc/event-leaderboard/?title=test21%22%3E%3Cu%3E (couldn't escalate to XSS due to WAF  :( )
   - If parameter is incorrect (aka title != a post), show error page (different view of event-leaderboard or whatever page)
-
-## Future milestones
-
 - [ ] Placeholder images/text while loading data from the API... (or loading spinner of some sort)
 - [ ] Break out all bet table calls to own class
-- [ ] Refactor (improve inline php):
-  - [x] index.php
-  - [ ] page-betting.php
-    - [ ] why the hell did i use tables?
-  - [ ] page-eventleaderboard.php
-  - [ ] page-leaderboard.php
-  - [ ] single.php
 
 ## Icebox
 
@@ -63,7 +48,10 @@
   - [x] fix when no fights available for betting.
   - [x] Update ufc-bets/page-events.php
     - [x] Adds a duplicate post ("-2" at the end of the post name)
-
+- [x] Include ACF in theme
+- [x] Create pages on theme activation
+- [x] Can `Settings > Permalinks > Post name` be done on theme activation?
+- [x] Default the reCaptcha **Off**
 
 ## Canceled
 
@@ -73,18 +61,6 @@
 - [ ] ~~Only constant API call should be for news on main page.  Everything else should call from a database. Mmm ... probably not, actually~~
 - [ ] ~~Socket.io for live, full screen event board ?~~
 
-## Installation
+## Installation & Documentation
 
-1. Install WordPress
-2. Download zip of repo and install as a WordPress theme (upload it within WordPress)
-3. Settings > Permalinks > Post name
-4. Pages > Add Page > Title = Leaderboard
-  - Template = Leaderboard Page
-5. Pages > Add Page > Title = Event Leaderboard
-  - Template = Event Leaderboard Page
-6. Pages > Add Page > Title = Betting
-  - Template = Betting Page
-
-## Documentation
-
-* Coming soon
+* [See the wiki](https://github.com/danxfisher/UFC-Fantasy-WordPress-Theme/wiki) - Work in progress
