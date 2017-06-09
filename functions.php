@@ -20,6 +20,12 @@ require_once(get_template_directory().'/includes/functions/ufc-bets/ufcbets.php'
 // register custom form hooks
 require_once(get_template_directory().'/includes/functions/forms.php');
 
+// register custom captcha form hooks
+$captcha_enabled = get_option('captcha_enabled');
+if ($captcha_enabled == 'yes') {
+  require_once(get_template_directory().'/includes/functions/captcha-forms.php');
+}
+
 // register admin styles
 // require_once(get_template_directory().'/includes/functions/enqueue-admin-styles.php');
 
