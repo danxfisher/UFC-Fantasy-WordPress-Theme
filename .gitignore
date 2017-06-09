@@ -6,7 +6,7 @@ includes/functions/sidebar.php
 includes/functions/template-tags.php
 includes/functions/theme-support.php
 includes/functions/woocommerce.php
-includes/functions/customizer.php
+includes/customizer.php
 
 old__functions.php
 old__page-betting.php
