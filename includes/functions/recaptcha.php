@@ -24,9 +24,11 @@ function display_recaptcha_options() {
 
 	add_settings_field("captcha_site_key", __("Site Key"), "display_captcha_site_key_element", "recaptcha-options", "header_section");
 	add_settings_field("captcha_secret_key", __("Secret Key"), "display_captcha_secret_key_element", "recaptcha-options", "header_section");
+	add_settings_field("captcha_enabled", __("Enabled?"), "display_captcha_enabled_element", "recaptcha-options", "header_section");
 
 	register_setting("header_section", "captcha_site_key");
 	register_setting("header_section", "captcha_secret_key");
+	register_setting("header_section", "captcha_enabled");
 }
 
 function display_recaptcha_content() {
@@ -41,6 +43,12 @@ function display_captcha_site_key_element() { ?>
 function display_captcha_secret_key_element() { ?>
 	<input type="text" name="captcha_secret_key" id="captcha_secret_key" value="<?php echo get_option('captcha_secret_key'); ?>" />
 <?php }
+
+function display_captcha_enabled_element() { ?>
+	Yes <input type="radio" name="captcha_enabled" value="yes" <?php checked('yes', get_option('captcha_enabled')); ?> />
+	No <input type="radio" name="captcha_enabled" value="no" <?php checked('no', get_option('captcha_enabled')); ?> />
+<?php }
+
 add_action("admin_init", "display_recaptcha_options");
 
 ?>
