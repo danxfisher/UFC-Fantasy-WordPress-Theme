@@ -29,6 +29,8 @@ function display_recaptcha_options() {
 	register_setting("header_section", "captcha_site_key");
 	register_setting("header_section", "captcha_secret_key");
 	register_setting("header_section", "captcha_enabled");
+
+
 }
 
 function display_recaptcha_content() {
@@ -46,7 +48,7 @@ function display_captcha_secret_key_element() { ?>
 
 function display_captcha_enabled_element() { ?>
 	Yes <input type="radio" name="captcha_enabled" value="yes" <?php checked('yes', get_option('captcha_enabled')); ?> />
-	No <input type="radio" name="captcha_enabled" value="no" <?php checked('no', get_option('captcha_enabled')); ?> />
+	No <input type="radio" name="captcha_enabled" value="no" <?php checked('no', get_option('captcha_enabled', 'no')); ?> />
 <?php }
 
 add_action("admin_init", "display_recaptcha_options");
