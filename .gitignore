@@ -1,12 +1,12 @@
-functions/enqueue-admin-styles.php
-functions/languages.php
-functions/menu.php
-functions/old_ufcbets.php
-functions/sidebar.php
-functions/template-tags.php
-functions/theme-support.php
-functions/woocommerce.php
-functions/customizer.php
+includes/functions/enqueue-admin-styles.php
+includes/functions/languages.php
+includes/functions/menu.php
+includes/functions/old_ufcbets.php
+includes/functions/sidebar.php
+includes/functions/template-tags.php
+includes/functions/theme-support.php
+includes/functions/woocommerce.php
+includes/functions/customizer.php
 
 old__functions.php
 old__page-betting.php
