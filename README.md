@@ -24,6 +24,7 @@ The majority of this theme is completed and it is fully functioning.  I will do 
 ## Icebox
 
 - [ ] Profile pages with stupid achievements
+- [ ] Ability for a user to create a "group" and invite people to it for mini fantasy leagues
 - [ ] Break events page out to custom post type ?
 - [ ] Improve page speed and performance
 - [ ] Lots of other stuff
