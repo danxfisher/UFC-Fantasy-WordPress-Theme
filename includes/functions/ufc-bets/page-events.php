@@ -194,9 +194,15 @@ function ufcBet_events() {
       // on deletion of event, delete from events, bets, and fights table
       $ufc_event_id = $wpdb->get_var( $wpdb->prepare("SELECT event_id FROM $events_table WHERE id = %s", $event_id) );
 
+      // delete all bets pertaining to event
       $wpdb->query("DELETE FROM $bets_table WHERE ufc_event_id IN($ufc_event_id)");
+      // delete all fights pertaining to event
       $wpdb->query("DELETE FROM $fights_table WHERE event_id IN($event_id)");
+      // delete all events pertaining to event
       $wpdb->query("DELETE FROM $events_table WHERE id IN($event_id)");
+      // get post object by title, delete post by id
+      $page = get_page_by_title($ufc_event_id, OBJECT, 'post');
+      wp_delete_post($page->ID, true);
 
       $delete_event_success = true;
       $delete_event_success_message = "Event has been deleted.";
@@ -286,8 +292,13 @@ function ufcBet_add_event() {
               <?php
 
               foreach($events_asc as $obj){
+                $todays_date = new DateTime();
+                $todays_date->setTimezone(new DateTimeZone('America/Los_Angeles'));
+                $todays_date = $todays_date->format('m-d-Y');
+                $event_date = new DateTime($obj->event_date);
+                $event_date = $event_date->format('m-d-Y');
 
-                if (date(DATE_ATOM) <= $obj->event_date) {
+                if (date(DATE_ATOM) <= $obj->event_date || $todays_date == $event_date) {
                   $the_date = date('F j, Y', strtotime($obj->event_date));
                   echo "<option value='" . $obj->id . "'>" . $obj->base_title . ' - ' . $the_date . '</option>';
                 }
