@@ -6,7 +6,6 @@ The majority of this theme is completed and it is fully functioning.  I will do 
 
 [See the wiki](https://github.com/danxfisher/UFC-Fantasy-WordPress-Theme/wiki) - Work in progress
 
-
 ## Future features
 
 - [ ] If fight is pulled (aka no longer exists via API call), remove it from picks page, picks db, bets db, etc
