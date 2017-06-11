@@ -133,7 +133,8 @@
 												</div>
 											</div>
 
-											<?php if (($thedate == get_field('event_start_date')) && date('H') > 19 && date('H') < 23) : ?>
+											<?php // need to add a fix to compare hour to the hour from the API ?>
+											<?php if (($thedate == get_field('event_start_date')) && date('H') >= 19 && date('H') <= 23) : ?>
 												<div class="col-sm-12 results__live">
 													Live
 												</div>
