@@ -309,6 +309,8 @@ function ufcBet_add_event() {
           <p>
             <span style="font-weight: bold">Lock Time:</span> <br />
             <input type="datetime-local" name="dp_locktime" id="dp_locktime" placeholder="2017-12-31 20:00:00" required />
+            <br />
+            <span style="font-style: italic;">Ex: 2017-12-31 20:00:00</span>
           </p>
           <p>
             <input type="submit" name="submit" id="add-event-submit" value="Add Event" />
