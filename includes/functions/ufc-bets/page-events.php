@@ -298,9 +298,6 @@ function ufcBet_add_event() {
                 $event_date = new DateTime($obj->event_date);
                 $event_date = $event_date->format('m-d-Y');
 
-                echo 'today: ' . $todays_date;
-                echo '|| event: ' . $event_date . '<br />';
-
                 if (date(DATE_ATOM) <= $obj->event_date || $todays_date == $event_date) {
                   $the_date = date('F j, Y', strtotime($obj->event_date));
                   echo "<option value='" . $obj->id . "'>" . $obj->base_title . ' - ' . $the_date . '</option>';
