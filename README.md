@@ -2,6 +2,11 @@
 
 The majority of this theme is completed and it is fully functioning.  I will do some clean up soon so the code isn't as shitty.  I need to finish the documentation as well.  I will likely only update this sparingly if necessary.  Enjoy.
 
+## Installation & Documentation
+
+[See the wiki](https://github.com/danxfisher/UFC-Fantasy-WordPress-Theme/wiki) - Work in progress
+
+
 ## Future features
 
 - [ ] If fight is pulled (aka no longer exists via API call), remove it from picks page, picks db, bets db, etc
@@ -21,7 +26,3 @@ The majority of this theme is completed and it is fully functioning.  I will do 
 
 - [ ] Profile pages with stupid achievements
 - [ ] Ability for a user to create a "group" and invite people to it for mini fantasy leagues
-
-## Installation & Documentation
-
-* [See the wiki](https://github.com/danxfisher/UFC-Fantasy-WordPress-Theme/wiki) - Work in progress
