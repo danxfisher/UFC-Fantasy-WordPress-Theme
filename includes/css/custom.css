@@ -853,8 +853,22 @@ footer {
     font-size: 24px;
   }
 
+  #close-menu {
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    right: 20px;
+    top: 40px;
+    background: url("../img/cross.png");
+    background-size: cover;
+    z-index: 1000;
+    cursor: pointer;
+  }
+
   nav li {
-    font-size: 48px;
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 60px;
   }
 
   .fighter-title-text {

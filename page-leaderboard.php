@@ -55,7 +55,7 @@ foreach ($events as $event) {
 
         if (isset($ufc_fight->fighter1_is_winner) && isset($ufc_fight->fighter2_is_winner)){
           if ($ufc_fight->fighter1_is_winner){
-            
+
             $winner = $fight->fighter1;
             $wpdb->update($fights_table, array('winner' => $winner), array( 'ufc_fight_id' => $fight->ufc_fight_id ), array('%s'), array( '%d' ));
 
@@ -116,6 +116,14 @@ foreach ($events as $event) {
 // get bets
 $bets_table = $wpdb->prefix . 'ufcBet_bets';
 $bets = $wpdb->get_results("SELECT * FROM $bets_table WHERE is_in_totals_leader = 0 AND is_complete = 1");
+
+
+// *****************************************************************************
+// 1) iterate all events from ufcBet_events table
+// 2) set the event leaderboard stuff for each event in
+//    case no one has clicked on it yet
+// *****************************************************************************
+
 
 // leaderboard table
 $leaderboard_table = $wpdb->prefix . 'ufcBet_leaderboard_totals';

@@ -127,7 +127,7 @@ foreach ($leader_bets as $bet) {
         'win_percentage'  => $win_percentage
       );
 
-      $wpdb->update($event_leaderboard_table, $data, array( 'username' => $bet->username ), array('%s', '%s', '%s'), array( '%s' ));
+      $wpdb->update($event_leaderboard_table, $data, array( 'username' => $bet->username , 'ufc_event_id' => $ufc_event_id), array('%d', '%d', '%s'), array( '%s', '%s' ));
 
       // update bet table with a 1 in is_in_totals_leader
       $wpdb->update($bets_table, array('is_in_event_leader' => '1'), array( 'id' => $bet->id ), array('%d'), array( '%d' ));
