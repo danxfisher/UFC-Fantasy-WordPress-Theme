@@ -102,7 +102,7 @@
 			</div>
 			<?php } ?>
 		</div>
-		<?php if ($obj->trailer_url != null) { ?>
+		<?php if (($obj->trailer_url != null) && ($obj->trailer_url != "http://pdvid.ufc.tv")) { ?>
 		<div id="event-trailer">
 			<div class="container">
 				<div class="row">
