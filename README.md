@@ -8,8 +8,8 @@ The majority of this theme is completed and it is fully functioning.  I will do 
 
 ## Future features
 
-- [ ] If fight is pulled (aka no longer exists via API call), remove it from picks page, picks db, bets db, etc
-  - [ ] Backend update fights button?
+- [ ] If fight is pulled (aka fightID from bet/fight db table no longer exists via API call), remove it from picks page, picks table, bets table, etc
+  - [ ] Backend update fights button for now?
 - [ ] Refactor (html/css):
   - [ ] custom.css
   - [ ] page-betting.php
@@ -23,5 +23,7 @@ The majority of this theme is completed and it is fully functioning.  I will do 
 
 ## Icebox features
 
+- [ ] Auto check daily if fights changed and update DB tables accordingly
+  - [ ] On day of fight, check every 2, 4, or 6 hours.
 - [ ] Profile pages with stupid achievements
 - [ ] Ability for a user to create a "group" and invite people to it for mini fantasy leagues
