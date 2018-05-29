@@ -91,7 +91,7 @@ foreach ($events as $event) {
             }
           }
           elseif (!empty($ufc_fight->result->Method)) {
-            foreach ($bets as $bet){
+            foreach ($all_bets as $bet){
               if ($bet->ufc_fight_id == $ufc_fight->id) {
                 // update fight table with draw
                 $wpdb->update($fights_table, array('winner' => 'DRAW'), array( 'ufc_fight_id' => $fight->ufc_fight_id ), array('%s'), array( '%d' ));

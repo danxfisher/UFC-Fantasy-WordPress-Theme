@@ -91,7 +91,7 @@ class ufc_events_display_table extends WP_List_Table {
       global $wpdb; //This is used only if making any database queries
       $ufc_events = $wpdb->prefix . 'ufcBet_events';
 
-      $per_page = 5;
+      $per_page = 50;
 
       $columns = $this->get_columns();
       $hidden = array();

@@ -1,29 +1,11 @@
 # UFC Fantasy WordPress Theme
 
-The majority of this theme is completed and it is fully functioning.  I will do some clean up soon so the code isn't as shitty.  I need to finish the documentation as well.  I will likely only update this sparingly if necessary.  Enjoy.
+A theme for fantasy UFC picks because I think the UFC's website is useless.
 
 ## Installation & Documentation
 
-[See the wiki](https://github.com/danxfisher/UFC-Fantasy-WordPress-Theme/wiki) - Work in progress
+[See the wiki](/wiki) - Work in progress
 
-## Future features
+## To Do items
 
-- [ ] If fight is pulled (aka fightID from bet/fight db table no longer exists via API call), remove it from picks page, picks table, bets table, etc
-  - [ ] Backend update fights button for now?
-- [ ] Refactor (html/css):
-  - [ ] custom.css
-  - [ ] page-betting.php
-  - [ ] page-eventleaderboard.php
-  - [ ] page-leaderboard.php
-- [ ] eggtactular: HTML injection here - http://www.danfisher.io/ufc/event-leaderboard/?title=test21%22%3E%3Cu%3E (couldn't escalate to XSS due to WAF  :( )
-  - If parameter is incorrect (aka title != a post), show error page (different view of event-leaderboard or whatever page)
-- [ ] Placeholder images/text while loading data from the API... (or loading spinner of some sort)
-- [ ] Break out all bet table calls to own class
-- [ ] Prevent unwanted access to /wp-includes
-
-## Icebox features
-
-- [ ] Auto check daily if fights changed and update DB tables accordingly
-  - [ ] On day of fight, check every 2, 4, or 6 hours.
-- [ ] Profile pages with stupid achievements
-- [ ] Ability for a user to create a "group" and invite people to it for mini fantasy leagues
+[See TODO.md](/blob/master/TODO%20-%20Log.md)

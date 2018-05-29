@@ -36,15 +36,15 @@
 
 				<?php $today = date('Y-m-d'); ?>
 				<?php $args = array(
-								'post_type'		=> 'post',
-								'meta_query'	=>  array (
-																		array(
-															        'key'		=> 'event_start_date',
-															        'compare'	=> '>=',
-															        'value'		=> $today,
-																    )
-																	),
-							);
+						'post_type'		=> 'post',
+						'meta_query'	=>  array (
+																array(
+													        'key'		=> 'event_start_date',
+													        'compare'	=> '>=',
+													        'value'		=> $today,
+														    )
+															),
+					);
 				?>
 
 				<?php $the_query = new WP_Query( $args ); ?>
@@ -115,16 +115,16 @@
 				<?php wp_reset_postdata(); ?>
 
 				<?php $args_results = array(
-								'post_type'		=> 'post',
-								'posts_per_page'	=>	'3',
-								'meta_query'	=>  array (
-																		array(
-															        'key'		=> 'event_start_date',
-															        'compare'	=> '<=',
-															        'value'		=> $thedate,
-																    )
-																	),
-							);
+						'post_type'		=> 'post',
+						'posts_per_page'	=>	'3',
+						'meta_query'	=>  array (
+																array(
+													        'key'		=> 'event_start_date',
+													        'compare'	=> '<=',
+													        'value'		=> $thedate,
+														    )
+															),
+					);
 				?>
 
 				<?php $the_results_query = new WP_Query( $args_results ); ?>

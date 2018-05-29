@@ -2,6 +2,8 @@
 /**
  *
  * comments template
+ * - copied from another project
+ * - not set up for comments currently
  *
  */
 if ( post_password_required() )
