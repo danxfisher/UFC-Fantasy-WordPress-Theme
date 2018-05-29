@@ -2,6 +2,9 @@
 
 A theme for fantasy UFC picks because I think the UFC's website is useless.
 
+## Preview
+
+![Preview](multi.jpg)
 
 ## Installation & Documentation
 
