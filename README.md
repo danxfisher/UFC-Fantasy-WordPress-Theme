@@ -4,7 +4,7 @@ A theme for fantasy UFC picks because I think the UFC's website is useless.
 
 ## Preview
 
-![alt text](multi.jpg "preview")
+![alt text](/mockups/multi.jpg "preview")
 
 ## Installation & Documentation
 
