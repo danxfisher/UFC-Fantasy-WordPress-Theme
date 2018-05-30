@@ -1,6 +1,6 @@
 <?php
 
-function mdl_enqueue_scripts() {
+function enqueue_custom_scripts() {
 
   /*^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
    *  css
@@ -27,6 +27,6 @@ function mdl_enqueue_scripts() {
   // wp_enqueue_script('scripts-bot',get_template_directory_uri() . '/includes/js/scripts.js',array(),false,true);
 
 }
-add_action( 'wp_enqueue_scripts', 'mdl_enqueue_scripts' );
+add_action( 'wp_enqueue_scripts', 'enqueue_custom_scripts' );
 
 ?>

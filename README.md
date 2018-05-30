@@ -2,7 +2,7 @@
 
 A theme for fantasy UFC picks because I think the UFC's website is useless.
 
-## Preview
+## Standard User Preview
 
 ![alt text](/mockups/multi.jpg "preview")
 
@@ -13,6 +13,8 @@ A theme for fantasy UFC picks because I think the UFC's website is useless.
 ![alt text](/mockups/event2.jpg "preview 4")
 
 ![alt text](/mockups/leaderboard.jpg "preview 5")
+
+## Admin User Preview
 
 ![alt text](/mockups/admin-edit-rights.jpg "preview 6")
 
