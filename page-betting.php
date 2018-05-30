@@ -22,6 +22,7 @@ if (isset($_GET['title'])) {
 }
 $bets_update_success = false;
 
+// verify this is a correct page
 if ($ufc_event_id && $event_title) {
 
   $events_table = $wpdb->prefix . 'ufcBet_events';
@@ -55,12 +56,7 @@ if ($ufc_event_id && $event_title) {
   else {
     $url = str_replace(" ", "-", $event_title);
 
-    // $ufc_event_url = 'http://ufc-data-api.ufc.com/api/v3/events/' . $ufc_event_id . '/fights';
-    // $ufc_event = file_get_contents($ufc_event_url);
-    // $ufc_event = json_decode($ufc_event);
-
     $ufc_event = UfcAPI::getFightsForEvent($ufc_event_id);
-
 
     // also use this if the user has previously submitted bets for this event
     if (isset( $_POST['submit'] )) {
@@ -170,6 +166,7 @@ if ($ufc_event_id && $event_title) {
             $event_lock_time = $ev->lock_time;
           }
           echo '<br />';
+
           date_default_timezone_set('America/Los_Angeles');
 
           $current_time = date('Y-m-d H:i:s');

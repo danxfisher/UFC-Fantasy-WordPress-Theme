@@ -20,14 +20,4 @@ function ufcBets_menu() {
 }
 
 add_action("admin_menu", "ufcBets_menu");
-
-
-/*
- * ufc bet - wp list table class
- *===========================================*/
-if(!class_exists('WP_List_Table')){
-    require_once( ABSPATH . 'wp-admin/includes/class-wp-list-table.php' );
-}
-
-
 ?>

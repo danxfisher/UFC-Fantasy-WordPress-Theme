@@ -1,6 +1,6 @@
 <?php
 /*
- * Custom UFC betting "plugin"
+ * Custom UFC fantasy
  *
  * auto generate front pages for the user if they don't already exist
  */

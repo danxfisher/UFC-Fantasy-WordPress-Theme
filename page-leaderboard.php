@@ -185,9 +185,6 @@ foreach ($bets as $bet) {
     $wpdb->update($bets_table, array('is_in_totals_leader' => '1'), array( 'id' => $bet->id ), array('%d'), array( '%d' ));
   }
 }
-
-
-
 ?>
 
   <div class="ufc-event">

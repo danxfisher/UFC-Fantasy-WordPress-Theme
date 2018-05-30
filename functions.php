@@ -12,7 +12,7 @@ require_once(get_template_directory().'/includes/functions/enqueue-google-fonts.
 require_once(get_template_directory().'/includes/functions/recaptcha.php');
 
 // register custom ufc betting plugin
-require_once(get_template_directory().'/includes/functions/ufc-bets/ufcbets.php');
+require_once(get_template_directory().'/includes/functions/ufc-bets/controller.php');
 
 // register custom form hooks
 require_once(get_template_directory().'/includes/functions/forms.php');

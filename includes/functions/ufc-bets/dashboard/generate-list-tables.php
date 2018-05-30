@@ -124,7 +124,7 @@ class ufc_events_display_table extends WP_List_Table {
 class ufc_bets_display_table extends WP_List_Table {
 
   function __construct(){
-      global $status, $page;
+      // global $status, $page;
 
       //Set parent defaults
       parent::__construct( array(
@@ -219,7 +219,7 @@ class ufc_bets_display_table extends WP_List_Table {
       // will be used in pagination settings
       $total_items = $wpdb->get_var("SELECT COUNT(id) FROM $ufc_bets");
       // prepare query params, as usual current page, order by and order direction
-      $paged = isset($_REQUEST['paged']) ? max(0, intval($_REQUEST['paged']) - 1) : 0;
+      $paged = isset($_GET['paged']) ? max(0, intval($_GET['paged']) - 1) : 0;
       $orderby = (isset($_REQUEST['orderby']) && in_array($_REQUEST['orderby'], array_keys($this->get_sortable_columns()))) ? $_REQUEST['orderby'] : 'id';
       $order = (isset($_REQUEST['order']) && in_array($_REQUEST['order'], array('asc', 'desc'))) ? $_REQUEST['order'] : 'asc';
 
