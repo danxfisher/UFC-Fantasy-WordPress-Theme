@@ -4,6 +4,7 @@
  */
 
  include('includes/php/ufc-api.php');
+ include('includes/php/ufc-betting.php');
 
 get_header(); ?>
 
@@ -24,9 +25,9 @@ $bets_update_success = false;
 
 // verify this is a correct page
 if ($ufc_event_id && $event_title) {
+  $ufcBetInstance = new UfcBetting();
 
-  $events_table = $wpdb->prefix . 'ufcBet_events';
-  $event = $wpdb->get_results($wpdb->prepare("SELECT * FROM $events_table WHERE event_id = %s", $ufc_event_id));
+  $event = $ufcBetInstance->getEventByEventId($ufc_event_id);
 
   if (!$event){ ?>
     <div class="ufc-event">
@@ -61,18 +62,12 @@ if ($ufc_event_id && $event_title) {
     // also use this if the user has previously submitted bets for this event
     if (isset( $_POST['submit'] )) {
 
-      $fights_table = $wpdb->prefix . 'ufcBet_fights';
-      $fights = $wpdb->get_results($wpdb->prepare("SELECT * FROM $fights_table WHERE ufc_event_id = %s AND is_betting_enabled = 1", $ufc_event_id));
-
-      $bets_table = $wpdb->prefix . 'ufcBet_bets';
+      $fights = $ufcBetInstance->getFightsByEventId($ufc_event_id);
 
       foreach ($fights as $fight){
-
-        $exists = $wpdb->get_var( $wpdb->prepare("SELECT COUNT(*) FROM $bets_table WHERE username = %s AND fight_id = %s", $current_user->user_login, $fight->id) );
-
+        $exists = $ufcBetInstance->doesBetExist($current_user->user_login, $fight->id);
         $fighter_selected = $_POST[$fight->id];
         // use this to confirm submissions
-
         $fighter = '';
 
         if ($fighter_selected === 'fighter1') {
@@ -96,14 +91,14 @@ if ($ufc_event_id && $event_title) {
           );
 
           if (!$exists){
-            $wpdb->insert($bets_table, $bet);
+            $ufcBetInstance->addNewBet($bet);
           }
           else {
             $bet_update = array(
               'fighter_selected'  => $fighter
             );
             if (is_user_logged_in()) {
-              $wpdb->update($bets_table, $bet_update, array( 'fight_id' => $fight->id, 'username' => $current_user->user_login), array('%s'), array( '%d', '%s' ));
+              $ufcBetInstance->updateBet($bet_update, $fight->id, $current_user->user_login);
             }
           }
         }
@@ -113,12 +108,10 @@ if ($ufc_event_id && $event_title) {
       $bets_update_success_message = "Your bets have been submitted.";
     }
 
-      $fights_table = $wpdb->prefix . 'ufcBet_fights';
-      $fights = $wpdb->get_results($wpdb->prepare("SELECT * FROM $fights_table WHERE ufc_event_id = %s AND is_betting_enabled = 1", $ufc_event_id));
-      $fights_order = array_reverse($fights);
+    $fights = $ufcBetInstance->getFightsByEventId($ufc_event_id);
+    $fights_order = array_reverse($fights);
 
-      $bets_table = $wpdb->prefix . 'ufcBet_bets';
-      $bets = $wpdb->get_results($wpdb->prepare("SELECT * FROM $bets_table WHERE username = %s AND ufc_event_id = %s", $current_user->user_login, $ufc_event_id));
+    $bets = $ufcBetInstance->getUserBets($current_user->user_login, $ufc_event_id);
 
     ?>
 
@@ -162,9 +155,11 @@ if ($ufc_event_id && $event_title) {
       <div id="ufc-bets">
           <div class="container">
         <?php if (is_user_logged_in()) {
+          // will only be 1
           foreach ($event as $ev) {
             $event_lock_time = $ev->lock_time;
           }
+
           echo '<br />';
 
           date_default_timezone_set('America/Los_Angeles');
