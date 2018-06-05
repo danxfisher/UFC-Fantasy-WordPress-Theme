@@ -4,6 +4,7 @@
  */
 
 include('includes/php/ufc-api.php');
+include('includes/php/ufc-event-leaderboard.php');
 
 get_header();
 
@@ -12,20 +13,21 @@ global $wpdb;
 $ufc_event_id = $_GET['ufc_event_id'];
 $event_title = $_GET['title'];
 
+$ufcEventLdrInstance = new UfcEventLeaderboard();
+
 // START HERE FOR OVERALL LEADERBOARD ******************************************
 // ALSO FIGHT BY FIGHT NEEDS TO BE IN REVERSE ORDER
 
 // get fights
 $fights_table = $wpdb->prefix . 'ufcBet_fights';
-$fights = $wpdb->get_results($wpdb->prepare("SELECT * FROM $fights_table WHERE ufc_event_id = %s AND is_betting_enabled = 1", $ufc_event_id));
+// $fights = $wpdb->get_results($wpdb->prepare("SELECT * FROM $fights_table WHERE ufc_event_id = %s AND is_betting_enabled = 1", $ufc_event_id));
+$fights = $ufcEventLdrInstance->getFightsByEventId($ufc_event_id);
 
 // get all bets for event
 $bets_table = $wpdb->prefix . 'ufcBet_bets';
-$bets = $wpdb->get_results($wpdb->prepare("SELECT * FROM $bets_table WHERE ufc_event_id = %s", $ufc_event_id));
+// $bets = $wpdb->get_results($wpdb->prepare("SELECT * FROM $bets_table WHERE ufc_event_id = %s", $ufc_event_id));
+$bets = $ufcEventLdrInstance->getBetsByEventId($ufc_event_id);
 
-// $ufc_event_url = 'http://ufc-data-api.ufc.com/api/v3/events/' . $ufc_event_id . '/fights';
-// $ufc_event = file_get_contents($ufc_event_url);
-// $ufc_event = json_decode($ufc_event);
 
 $ufc_event = UfcAPI::getFightsForEvent($ufc_event_id);
 
@@ -38,6 +40,7 @@ foreach($ufc_event as $ufc_fight){
     if ($ufc_fight->id == $fight->ufc_fight_id){
 
       $winner = '';
+
       if (isset($ufc_fight->fighter1_is_winner) && isset($ufc_fight->fighter2_is_winner)){
 
         if ($ufc_fight->fighter1_is_winner){
