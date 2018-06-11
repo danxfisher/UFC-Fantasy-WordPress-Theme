@@ -3,25 +3,25 @@
 ## ufc-api.php
 
 * **static** getNewsArticles
-  * *description:*
+  * *description:* gets all news articles from UFC api
   * *parameters:* null
-  * *returns:*
+  * *returns:*  array of news articles objects
 * **static** getAllEvents
-  * *description:*
+  * *description:*  gets all events from UFC api
   * *parameters:* null
-  * *returns:*
+  * *returns:*  array of events objects
 * **static** getEventByID
-  * *description:*
+  * *description:*  get a UFC event by event ID from UFC api
   * *parameters:* $event_id
-  * *returns:*
+  * *returns:*  event object
 * **static** getEventByTitleAndDate
-  * *description:*
+  * *description:*  get a UFC event by title and date from UFC api
   * *parameters:* null
-  * *returns:*
+  * *returns:* null
 * **static** getFightsForEvent
-  * *description:*
+  * *description:* gets all fights for a UFC event by ID from UFC api
   * *parameters:* $event_id
-  * *returns:*
+  * *returns:*  array of fights objects
 
 ## ufc-betting.php
 * getEventByEventId
@@ -55,7 +55,7 @@
   * *parameters:* $event_id
   * *returns:*
 * getBetsByEventId
-  * *description:* 
+  * *description:*
   * *parameters:* $event_id
   * *returns:*
 
