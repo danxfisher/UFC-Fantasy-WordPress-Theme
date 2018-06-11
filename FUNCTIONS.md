@@ -1,6 +1,7 @@
 # Function Design Spec
 
 ## ufc-api.php
+
 * **static** getNewsArticles
 * **static** getAllEvents
 * **static** getEventByID
@@ -10,7 +11,9 @@
   * *parameters:* $event_id
 
 ## ufc-tables.php (probably combine ufc-betting.php, ufc-event-leaderboard.php, ufc-leaderboard.php)
+
 ###ufc-betting.php
+
 * getEventByEventId
   * *parameters:* $event_id
 * getFightsByEventId
@@ -25,6 +28,7 @@
   * *parameters:* $bet_update, $fight_id, $username
 
 ###ufc-event-leaderboard.php
+
 * getFightsByEventId
   * *parameters:* $event_id
 * getBetsByEventId
