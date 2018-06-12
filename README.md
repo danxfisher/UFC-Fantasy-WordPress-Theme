@@ -24,6 +24,7 @@ A theme for fantasy UFC picks because I think the UFC's website is useless.
 
 [See the wiki](https://github.com/danxfisher/UFC-Fantasy-WordPress-Theme/wiki) - Work in progress
 
-## To Do items
+## Links
 
-[See TODO.md](/TODO%20-%20Log.md)
+* [TODO list](/TODO%20-%20Log.md)
+* [UFC classes design spec](/FUNCTIONS.md)

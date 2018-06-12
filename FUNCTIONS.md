@@ -1,4 +1,4 @@
-# Function Design Spec
+# UFC Classes Design Spec
 
 ## ufc-api.php
 
@@ -25,52 +25,50 @@
 
 ## ufc-betting.php
 * getEventByEventId
-  * *description:*
+  * *description:* get event from event table by event ID
   * *parameters:* $event_id
-  * *returns:*
+  * *returns:* event object
 * getFightsByEventId
-  * *description:*
+  * *description:* get fights from fights table by event ID
   * *parameters:* $event_id
-  * *returns:*
+  * *returns:* array of fights objects
 * doesBetExist
-  * *description:*
+  * *description:* checks to see if the user has submitted a bet for the $fight_id previously
   * *parameters:* $username, $fight_id
-  * *returns:*
-* getUserBets
-  * *description:*
+  * *returns:* boolean
+* getUserBetsForEvent
+  * *description:* gets all bets from bet table for $username by event ID
   * *parameters:* $username, $event_id
-  * *returns:*
+  * *returns:* array of bets objects
 * addNewBet
-  * *description:*
+  * *description:* adds a new bet to the bets table
   * *parameters:* $bet
-  * *returns:*
+  * *returns:* null
 * updateBet
-  * *description:*
+  * *description:* updates an existing bet in the bets table
   * *parameters:* $bet_update, $fight_id, $username
-  * *returns:*
+  * *returns:* null
 
 ## ufc-event-leaderboard.php
 * getFightsByEventId
-  * *description:*
+  * *description:* get fights from fight table by event ID
   * *parameters:* $event_id
-  * *returns:*
+  * *returns:* array of fights objects
 * getBetsByEventId
-  * *description:*
+  * *description:* get bets from bets table by event ID
   * *parameters:* $event_id
-  * *returns:*
-
-## ufc-leaderboard.php
+  * *returns:* array of bets objects
 
 ## ufc-calculations.php
 * calculateEventResults
-  * *description:*
+  * *description:* calculates the results of an event
   * *parameters:* $event_id, $fights, $bets
-  * *returns:*
+  * *returns:* null
 * calculateEventLeaderboard
-  * *description:*
+  * *description:* does all calculations necessary for event leaderboard
   * *parameters:* $event_id
-  * *returns:*
+  * *returns:* null
 * calculateOverallLeaderboard
-  * *description:*
-  * *parameters:*
-  * *returns:*
+  * *description:* does all calculations necessary for overall leaderboard
+  * *parameters:* $event_id
+  * *returns:* null

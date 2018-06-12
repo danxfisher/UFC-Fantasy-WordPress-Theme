@@ -111,7 +111,7 @@ if ($ufc_event_id && $event_title) {
     $fights = $ufcBetInstance->getFightsByEventId($ufc_event_id);
     $fights_order = array_reverse($fights);
 
-    $bets = $ufcBetInstance->getUserBets($current_user->user_login, $ufc_event_id);
+    $bets = $ufcBetInstance->getUserBetsForEvent($current_user->user_login, $ufc_event_id);
 
     ?>
 
