@@ -1,6 +1,6 @@
 # UFC Fantasy WordPress Theme
 
-A theme for fantasy UFC picks because I think the UFC's website is useless.
+A theme for fantasy UFC picks because I think the UFC's website is useless.  **NOTE**: This is still in its infancy so please don't mind the commented out code and other goofy things you may find.  I'm only able to update this sparingly.
 
 ## Standard User Preview
 
