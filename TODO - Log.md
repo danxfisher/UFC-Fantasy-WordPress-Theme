@@ -1,5 +1,10 @@
 # To Do
 
+## In progress
+
+- [ ] Organize php functions to make pages more human readable
+- [ ] OOP functions for all pages
+
 ## Future features
 
 - [ ] If fight is pulled (aka fightID from bet/fight db table no longer exists via API call), remove it from picks page, picks table, bets table, etc

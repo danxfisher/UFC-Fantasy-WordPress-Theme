@@ -34,7 +34,7 @@
       return $exists;
     }
 
-    public function getUserBets($username, $event_id) {
+    public function getUserBetsForEvent($username, $event_id) {
       $table_name = $this->wpdb->prefix . 'ufcBet_bets';
       $bets = $this->wpdb->get_results($this->wpdb->prepare("SELECT * FROM $table_name WHERE username = %s AND ufc_event_id = %s", $username, $event_id));
 
@@ -49,7 +49,7 @@
     public function updateBet($bet_update, $fight_id, $username) {
       $bets_table = $this->wpdb->prefix . 'ufcBet_bets';
 
-      return $this->wpdb->update($bets_table, $bet_update, array( 
+      return $this->wpdb->update($bets_table, $bet_update, array(
         'fight_id' => $fight_id,
         'username' => $username),
         array('%s'),
