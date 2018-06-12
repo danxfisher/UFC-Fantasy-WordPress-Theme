@@ -60,3 +60,17 @@
   * *returns:*
 
 ## ufc-leaderboard.php
+
+## ufc-calculations.php
+* calculateEventResults
+  * *description:*
+  * *parameters:* $event_id, $fights, $bets
+  * *returns:*
+* calculateEventLeaderboard
+  * *description:*
+  * *parameters:* $event_id
+  * *returns:*
+* calculateOverallLeaderboard
+  * *description:*
+  * *parameters:*
+  * *returns:*
